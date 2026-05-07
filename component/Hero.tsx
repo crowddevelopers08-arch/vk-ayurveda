@@ -170,6 +170,15 @@ export default function AyurvedaBanner() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  useEffect(() => {
+    if (showLanguagePopup) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => { document.body.style.overflow = ""; };
+  }, [showLanguagePopup]);
+
   const handlePillClick = (i: number) => {
     if (intervalRef.current) window.clearInterval(intervalRef.current);
     switchTo(i);
@@ -183,7 +192,7 @@ export default function AyurvedaBanner() {
   });
 
   return (
-    <div style={{ position: "relative", width: "100%", minHeight: isMobile ? 680 : 680, overflow: "hidden", display: "flex", flexDirection: "column", fontFamily: "'DM Sans', sans-serif" }}>
+    <div className="max-sm:mt-5" style={{ position: "relative", width: "100%", minHeight: isMobile ? 680 : 680, overflow: "hidden", display: "flex", flexDirection: "column", fontFamily: "'DM Sans', sans-serif" }}>
 
       {/* Cycling background images — full visible, especially at top */}
       {conditions.map((c, i) => (
@@ -214,7 +223,7 @@ export default function AyurvedaBanner() {
       <div style={{ flex: 1 }} />
 
       {/* ── Bottom content block ── */}
-      <div style={{ position: "relative", zIndex: 5, width: "100%", padding: isMobile ? "0 22px 44px" : "0 56px 52px" }}>
+      <div style={{ position: "relative", zIndex: 5, width: "100%", padding: isMobile ? "77px 22px 44px" : "0 56px 52px" }}>
 
         {/* Two-column on desktop */}
         <div style={{ display: "flex", flexDirection: isMobile ? "column" : "row", alignItems: isMobile ? "stretch" : "flex-end", gap: isMobile ? 20 : 48, maxWidth: 1280 }}>
@@ -280,7 +289,7 @@ export default function AyurvedaBanner() {
 
             {/* Price */}
             <div style={anim(0.4)}>
-              <div style={{ display: "inline-flex", alignItems: "center", gap: 8, fontSize: 13, fontWeight: 700, padding: "7px 16px", borderRadius: 50, background: "rgba(232,184,75,0.12)", border: "1px solid rgba(232,184,75,0.35)", color: "var(--vk-lime)" }}>
+              <div style={{ display: isMobile ? "none" : "inline-flex", alignItems: "center", gap: 8, fontSize: 13, fontWeight: 700, padding: "7px 16px", borderRadius: 50, background: "rgba(232,184,75,0.12)", border: "1px solid rgba(232,184,75,0.35)", color: "var(--vk-lime)" }}>
                 {copy.consultation}&nbsp;<span style={{ fontSize: isMobile ? 17 : 18, fontFamily: "Georgia,serif" }}>₹150</span>
                 <span style={{ fontSize: 10.5, opacity: 0.7 }}>{copy.only}</span>
                 <span style={{ width: 1, height: 13, background: "rgba(232,184,75,0.3)", display: "inline-block" }} />
@@ -340,7 +349,7 @@ export default function AyurvedaBanner() {
 
       {/* Language popup */}
       {showLanguagePopup && (
-        <div style={{ position: "absolute", inset: 0, zIndex: 20, display: "flex", alignItems: "center", justifyContent: "center", padding: 20, background: "rgba(0,0,0,0.5)", backdropFilter: "blur(6px)" }}>
+        <div style={{ position: "fixed", inset: 0, zIndex: 100, display: "flex", alignItems: "center", justifyContent: "center", padding: 20, background: "rgba(0,0,0,0.55)", backdropFilter: "blur(6px)" }}>
           <div style={{ width: "min(100%,420px)", borderRadius: 22, border: "1px solid rgba(255,255,255,0.16)", background: "rgba(255,255,255,0.97)", boxShadow: "0 24px 70px rgba(0,0,0,0.32)", padding: 28, textAlign: "center" }}>
             <div style={{ width: 44, height: 44, borderRadius: "50%", margin: "0 auto 16px", background: "var(--vk-lime-soft)", color: "var(--vk-green)", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 900, fontSize: 20 }}>அ</div>
             <h2 style={{ margin: "0 0 8px", color: "var(--vk-green-dark)", fontFamily: "Georgia,'Playfair Display',serif", fontSize: language === "ta" ? 23 : 28, lineHeight: 1.2 }}>{copy.popupTitle}</h2>
