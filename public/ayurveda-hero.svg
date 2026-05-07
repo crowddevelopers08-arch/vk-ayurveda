@@ -1,0 +1,53 @@
+<svg width="900" height="1125" viewBox="0 0 900 1125" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="1125" fill="#FDF2F8"/>
+  <rect x="0" y="0" width="900" height="1125" fill="url(#bg)"/>
+  <circle cx="710" cy="155" r="210" fill="#EC4899" fill-opacity="0.16"/>
+  <circle cx="166" cy="940" r="260" fill="#1E2F5F" fill-opacity="0.11"/>
+  <path d="M174 792C248 660 363 597 520 604C664 610 772 716 792 864C703 947 591 987 456 985C323 983 229 919 174 792Z" fill="#1E2F5F" fill-opacity="0.12"/>
+  <path d="M151 783C250 704 358 692 476 747C586 798 657 889 689 1020C561 1047 440 1030 326 969C228 916 170 854 151 783Z" fill="#2A3F7A" fill-opacity="0.18"/>
+  <path d="M214 714C290 628 388 598 508 625C616 649 702 720 765 838C664 899 559 922 449 906C340 890 261 826 214 714Z" fill="#EC4899" fill-opacity="0.16"/>
+
+  <ellipse cx="450" cy="642" rx="194" ry="66" fill="#1E2F5F" fill-opacity="0.16"/>
+  <path d="M284 553C284 462 358 388 449 388C540 388 614 462 614 553V606C614 647 581 680 540 680H358C317 680 284 647 284 606V553Z" fill="#F9A8D4"/>
+  <path d="M318 550C318 478 376 420 448 420C520 420 578 478 578 550V593C578 626 551 653 518 653H378C345 653 318 626 318 593V550Z" fill="#FDF2F8"/>
+  <path d="M353 567C353 515 395 473 447 473C499 473 541 515 541 567V588C541 611 522 630 499 630H395C372 630 353 611 353 588V567Z" fill="#FFFFFF"/>
+  <path d="M402 544C430 562 464 562 492 544" stroke="#1E2F5F" stroke-width="13" stroke-linecap="round"/>
+  <path d="M383 593C423 617 472 617 512 593" stroke="#EC4899" stroke-width="11" stroke-linecap="round"/>
+
+  <path d="M436 315C421 270 424 228 447 189C472 231 476 272 460 315H436Z" fill="#2E7D58"/>
+  <path d="M447 188C481 224 496 262 490 302C454 281 436 243 447 188Z" fill="#56B779"/>
+  <path d="M446 188C411 224 396 262 402 302C439 281 456 243 446 188Z" fill="#77C98D"/>
+  <path d="M448 188C448 251 448 303 448 352" stroke="#1E2F5F" stroke-opacity="0.28" stroke-width="8" stroke-linecap="round"/>
+
+  <path d="M219 435C260 391 308 381 362 405C315 450 267 460 219 435Z" fill="#56B779"/>
+  <path d="M681 435C640 391 592 381 538 405C585 450 633 460 681 435Z" fill="#77C98D"/>
+  <path d="M230 438C284 424 326 416 359 409" stroke="#1E2F5F" stroke-opacity="0.25" stroke-width="7" stroke-linecap="round"/>
+  <path d="M670 438C616 424 574 416 541 409" stroke="#1E2F5F" stroke-opacity="0.25" stroke-width="7" stroke-linecap="round"/>
+
+  <path d="M585 272C644 239 701 242 756 281C691 310 634 307 585 272Z" fill="#56B779"/>
+  <path d="M315 272C256 239 199 242 144 281C209 310 266 307 315 272Z" fill="#77C98D"/>
+  <path d="M598 274C653 275 704 278 750 282" stroke="#1E2F5F" stroke-opacity="0.22" stroke-width="7" stroke-linecap="round"/>
+  <path d="M302 274C247 275 196 278 150 282" stroke="#1E2F5F" stroke-opacity="0.22" stroke-width="7" stroke-linecap="round"/>
+
+  <path d="M244 750C273 723 309 713 352 721C321 755 285 765 244 750Z" fill="#56B779"/>
+  <path d="M656 750C627 723 591 713 548 721C579 755 615 765 656 750Z" fill="#77C98D"/>
+
+  <rect x="292" y="744" width="316" height="120" rx="60" fill="#FFFFFF" fill-opacity="0.9"/>
+  <path d="M350 804H550" stroke="#1E2F5F" stroke-width="16" stroke-linecap="round"/>
+  <path d="M392 775H508" stroke="#EC4899" stroke-width="13" stroke-linecap="round"/>
+  <circle cx="450" cy="805" r="27" fill="#FCE7F3" stroke="#EC4899" stroke-width="8"/>
+
+  <circle cx="175" cy="574" r="42" fill="#FFFFFF" fill-opacity="0.78"/>
+  <path d="M175 552L183 568L201 571L188 584L191 602L175 594L159 602L162 584L149 571L167 568L175 552Z" fill="#EC4899"/>
+  <circle cx="724" cy="584" r="48" fill="#FFFFFF" fill-opacity="0.78"/>
+  <path d="M724 555C743 574 743 595 724 614C705 595 705 574 724 555Z" fill="#56B779"/>
+  <path d="M724 555C711 582 711 602 724 614" stroke="#1E2F5F" stroke-opacity="0.28" stroke-width="5" stroke-linecap="round"/>
+
+  <defs>
+    <linearGradient id="bg" x1="143" y1="72" x2="784" y2="1041" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF"/>
+      <stop offset="0.48" stop-color="#FCE7F3"/>
+      <stop offset="1" stop-color="#EFF6FF"/>
+    </linearGradient>
+  </defs>
+</svg>
