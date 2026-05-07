@@ -9,37 +9,37 @@ const problems = [
     label: "NABH Certified Hospital",
     labelTa: "NABH சான்றளிக்கப்பட்ட மருத்துவமனை",
     image:
-      "https://images.pexels.com/photos/3825586/pexels-photo-3825586.jpeg?auto=compress&cs=tinysrgb&w=300",
+      "/vk-ayurveda.png",
   },
   {
     label: "4.8★ Google Rating",
     image:
-      "https://images.pexels.com/photos/4226219/pexels-photo-4226219.jpeg?auto=compress&cs=tinysrgb&w=300",
+      "/Google-Rating.png",
     labelTa: "4.8★ Google மதிப்பீடு",
   },
   {
     label: "40,000+ Patients Treated",
     labelTa: "40,000+ நோயாளிகள் சிகிச்சை பெற்றுள்ளனர்",
     image:
-      "https://images.pexels.com/photos/4386466/pexels-photo-4386466.jpeg?auto=compress&cs=tinysrgb&w=300",
+      "/Patients-Treated.png",
   },
   {
     label: "Experienced Ayurvedic Doctors",
     labelTa: "அனுபவமுள்ள ஆயுர்வேத மருத்துவர்கள்",
     image:
-      "https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=300",
+      "/Ayurvedic-Doctors.png",
   },
   {
     label: "Specialized Pain Treatments",
     labelTa: "சிறப்பு வலி சிகிச்சைகள்",
     image:
-      "https://images.pexels.com/photos/159211/headache-pain-pills-medication-159211.jpeg?auto=compress&cs=tinysrgb&w=300",
+      "/Specialized-Pain.png",
   },
   {
     label: "Affordable Consultation",
     labelTa: "குறைந்த கட்டண ஆலோசனை",
     image:
-      "/images9.avif",
+      "/Affordable.png",
   },
   {
     label: "Safe & Natural Treatment",
@@ -249,7 +249,7 @@ export default function ProblemSection() {
           height: 100%;
           object-fit: cover;
           display: block;
-          filter: saturate(0.85) brightness(1.04);
+          filter: saturate(0.85) brightness(1.00);
           transition: filter 0.5s ease;
         }
         .ps-card:hover .ps-img-wrap img {

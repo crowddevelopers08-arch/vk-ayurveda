@@ -9,25 +9,25 @@ const steps = [
     num: "01",
     label: "Doctor Consultation",
     labelTa: "மருத்துவர் ஆலோசனை",
-    image: "https://images.pexels.com/photos/5327585/pexels-photo-5327585.jpeg?auto=compress&cs=tinysrgb&w=900",
+    image: "/doctors.png",
   },
   {
     num: "02",
     label: "Condition Assessment",
     labelTa: "உடல்நிலை பரிசோதனை",
-    image: "https://images.pexels.com/photos/7578803/pexels-photo-7578803.jpeg?auto=compress&cs=tinysrgb&w=900",
+    image: "/doctors2.png",
   },
   {
     num: "03",
     label: "Personalized Treatment Plan",
     labelTa: "தனிப்பட்ட சிகிச்சை திட்டம்",
-    image: "https://images.pexels.com/photos/3997989/pexels-photo-3997989.jpeg?auto=compress&cs=tinysrgb&w=900",
+    image: "/doctors1.png",
   },
   {
     num: "04",
     label: "Ayurvedic Therapies",
     labelTa: "ஆயுர்வேத சிகிச்சைகள்",
-    image: "https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg?auto=compress&cs=tinysrgb&w=900",
+    image: "/doctors3.png",
   },
   {
     num: "05",
@@ -39,7 +39,7 @@ const steps = [
     num: "06",
     label: "Follow-up Support",
     labelTa: "தொடர்ந்து பராமரிப்பு",
-    image: "https://images.pexels.com/photos/7579831/pexels-photo-7579831.jpeg?auto=compress&cs=tinysrgb&w=900",
+    image: "/doctors4.png",
   },
 ];
 

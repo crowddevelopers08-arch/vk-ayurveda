@@ -10,7 +10,7 @@ const stats = [
     label: "Body Detox",
     labelTa: "உடல் சுத்திகரிப்பு",
     image:
-      "/images5.avif",
+      "/Body-Detox.png",
     className: "md:col-start-1 md:row-start-1",
   },
   {
@@ -18,7 +18,7 @@ const stats = [
     label: "Pain Relief",
     labelTa: "வலி நிவாரணம்",
     image:
-      "/images6.avif",
+      "/Pain-Relief.png",
     className: "md:col-start-1 md:row-start-2",
   },
   {
@@ -26,7 +26,7 @@ const stats = [
     label: "Muscle Relaxation",
     labelTa: "தசை தளர்வு",
     image:
-      "/images7.avif",
+      "/Muscle-Relaxation.png",
     className: "md:col-start-2 md:row-span-2 md:row-start-1",
     large: true,
   },
@@ -35,7 +35,7 @@ const stats = [
     label: "Joint Mobility Improvement",
     labelTa: "மூட்டு இயக்க மேம்பாடு",
     image:
-      "/images8.avif",
+      "/Joint-Mobility-Improvement.png",
     className: "md:col-start-3 md:row-start-1",
   },
   {
