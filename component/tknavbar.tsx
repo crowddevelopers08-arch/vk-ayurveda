@@ -28,6 +28,7 @@ export default function Navbar() {
   const chooseLanguage = (nextLanguage: Language) => {
     setLanguage(nextLanguage);
     window.localStorage.setItem("vk-language", nextLanguage);
+    window.dispatchEvent(new CustomEvent("vk-language-change", { detail: nextLanguage }));
   };
 
   return (
