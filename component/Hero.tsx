@@ -19,7 +19,7 @@ const conditions = [
   },
   {
     label: "Arthritis",
-    image: "/artr.png",
+    image: "/arthr.png",
   },
 ];
 
