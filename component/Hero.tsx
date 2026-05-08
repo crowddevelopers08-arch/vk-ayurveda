@@ -7,19 +7,19 @@ type Language = "en" | "ta";
 const conditions = [
   {
     label: "Back Pain",
-    image: "/sample-vk.png",
+    image: "/back.png",
   },
   {
     label: "Neck Pain",
-    image: "/ban1.avif",
+    image: "/neck.png",
   },
   {
     label: "Joint Pain",
-    image: "/ban2.avif",
+    image: "/joint.png",
   },
   {
     label: "Arthritis",
-    image: "/ban3.jpg",
+    image: "/artr.png",
   },
 ];
 
