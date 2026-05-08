@@ -7,7 +7,7 @@ type Language = "en" | "ta";
 const conditions = [
   {
     label: "Back Pain",
-    image: "/ban.avif",
+    image: "/sample-vk.png",
   },
   {
     label: "Neck Pain",
