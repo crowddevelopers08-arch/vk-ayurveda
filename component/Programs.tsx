@@ -366,7 +366,7 @@ export default function ProblemSection() {
           </div>
 
           {/* CTA bar */}
-          <button className="cursor-pointer" onClick={() => window.dispatchEvent(new CustomEvent("vk-open-booking"))} className={`ps-cta  ${visible ? "in" : ""}`}>
+          <button onClick={() => window.dispatchEvent(new CustomEvent("vk-open-booking"))} className={`ps-cta cursor-pointer ${visible ? "in" : ""}`}>
             <span>{copy.cta}</span>
           </button>
         </div>
