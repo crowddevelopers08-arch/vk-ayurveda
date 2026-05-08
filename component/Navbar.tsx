@@ -95,7 +95,7 @@ export default function Navbar() {
                 key={item}
                 type="button"
                 onClick={() => chooseLanguage(item)}
-                className={`rounded-full px-2.5 py-1.5 text-[11px] font-extrabold transition sm:px-3 sm:text-xs ${
+                className={`cursor-pointer rounded-full px-2.5 py-1.5 text-[11px] font-extrabold transition sm:px-3 sm:text-xs ${
                   language === item
                     ? "bg-white text-[var(--vk-pink)] shadow-[0_4px_14px_rgba(1,90,54,0.12)]"
                     : "text-[var(--vk-green-dark)] hover:bg-white/70"
@@ -111,7 +111,7 @@ export default function Navbar() {
             <button
               type="button"
               onClick={() => window.dispatchEvent(new CustomEvent("vk-open-booking"))}
-              className="rounded-full px-5 py-2.5 text-sm font-extrabold text-white transition hover:-translate-y-0.5 rv2-cta-link"
+              className="cursor-pointer rounded-full px-5 py-2.5 text-sm font-extrabold text-white transition hover:-translate-y-0.5 rv2-cta-link"
             >
               {copy.cta}
             </button>
@@ -120,7 +120,7 @@ export default function Navbar() {
           <button
             type="button"
             onClick={() => setMenuOpen((open) => !open)}
-            className="flex h-9 w-9 items-center justify-center rounded-full border border-[var(--vk-green)]/15 bg-[var(--vk-lime-soft)] text-[var(--vk-green-dark)] transition hover:bg-white md:hidden"
+            className="cursor-pointer flex h-9 w-9 items-center justify-center rounded-full border border-[var(--vk-green)]/15 bg-[var(--vk-lime-soft)] text-[var(--vk-green-dark)] transition hover:bg-white md:hidden"
             aria-label={menuOpen ? "Close menu" : "Open menu"}
             aria-expanded={menuOpen}
           >
@@ -144,7 +144,7 @@ export default function Navbar() {
               key={link.href}
               href={link.href}
               onClick={() => setMenuOpen(false)}
-              className="rounded-full bg-white px-4 py-3 text-sm font-bold text-[var(--vk-green-dark)] transition hover:text-[var(--vk-pink)]"
+              className="cursor-pointer rounded-full bg-white px-4 py-3 text-sm font-bold text-[var(--vk-green-dark)] transition hover:text-[var(--vk-pink)]"
             >
               {link.label}
             </a>

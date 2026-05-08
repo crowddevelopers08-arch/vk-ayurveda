@@ -76,7 +76,7 @@ export default function CTASection() {
             <button
               type="button"
               onClick={() => window.dispatchEvent(new CustomEvent("vk-open-booking"))}
-              className="rv2-cta-link w-full justify-center rounded-full bg-white px-5 py-3.5 text-sm font-bold leading-tight text-[var(--vk-pink)] shadow-[0_6px_24px_rgba(0,0,0,0.15)] transition hover:-translate-y-0.5 hover:shadow-[0_10px_30px_rgba(0,0,0,0.2)] sm:w-auto sm:px-9 sm:py-4 sm:text-base"
+              className="cursor-pointer rv2-cta-link w-full justify-center rounded-full bg-white px-5 py-3.5 text-sm font-bold leading-tight text-[var(--vk-pink)] shadow-[0_6px_24px_rgba(0,0,0,0.15)] transition hover:-translate-y-0.5 hover:shadow-[0_10px_30px_rgba(0,0,0,0.2)] sm:w-auto sm:px-9 sm:py-4 sm:text-base"
             >
               {copy.book}
             </button>

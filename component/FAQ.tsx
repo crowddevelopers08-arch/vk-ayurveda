@@ -148,7 +148,7 @@ export default function FAQ() {
 
           <button
             onClick={() => window.dispatchEvent(new CustomEvent("vk-open-booking"))}
-            className="rv2-cta-link mt-6 inline-flex w-full items-center justify-center gap-3 rounded-full px-4 py-3 text-center text-white transition hover:-translate-y-0.5 sm:mt-8 sm:w-auto sm:gap-4 sm:px-6 sm:py-4 sm:text-left"
+            className="cursor-pointer rv2-cta-link mt-6 inline-flex w-full items-center justify-center gap-3 rounded-full px-4 py-3 text-center text-white transition hover:-translate-y-0.5 sm:mt-8 sm:w-auto sm:gap-4 sm:px-6 sm:py-4 sm:text-left"
           >
             <span className="text-xs font-extrabold uppercase tracking-[0.08em] sm:text-sm sm:tracking-[0.14em]">
               {copy.feeLabel}

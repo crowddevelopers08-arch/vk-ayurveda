@@ -585,7 +585,7 @@ export default function ReviewSection() {
             <button
               type="button"
               onClick={() => window.dispatchEvent(new CustomEvent("vk-open-booking"))}
-              className="rv2-cta-link"
+              className="rv2-cta-link cursor-pointer"
               style={{ background: "var(--vk-pink)", color: "#fff", borderColor: "var(--vk-pink)" }}
             >
               {copy.bookCta}

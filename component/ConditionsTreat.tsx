@@ -9,7 +9,7 @@ const conditionGroups = [
     title: "Back Pain",
     titleTa: "முதுகு வலி",
     items: ["Slip Disc", "Sciatica", "Lumbar Spondylosis"],
-    itemsTa: ["ஸ்லிப் டிஸ்க்", "சயாட்டிகா", "லம்பர் ஸ்பாண்டிலோசிஸ்"],
+    itemsTa: ["முதுகுத் தட்டு வழிதல்", "சயாட்டிகா நரம்பு வலி", "கீழ் முதுகெலும்பு தேய்மானம்"],
     image:
       "/back.avif",
   },
@@ -17,7 +17,7 @@ const conditionGroups = [
     title: "Neck Pain",
     titleTa: "கழுத்து வலி",
     items: ["Cervical Spondylosis", "Neck Stiffness", "Disc Problems"],
-    itemsTa: ["செர்வைக்கல் ஸ்பாண்டிலோசிஸ்", "கழுத்து பிடிப்பு", "டிஸ்க் பிரச்சனை"],
+    itemsTa: ["கழுத்து முதுகெலும்பு தேய்மானம்", "கழுத்து பிடிப்பு", "முதுகுத்தட்டு பிரச்சினைகள்"],
     image:
       "/neck.jpg",
   },
@@ -25,7 +25,7 @@ const conditionGroups = [
     title: "Joint & Arthritis",
     titleTa: "மூட்டு & ஆர்த்ரைடிஸ்",
     items: ["Knee Pain", "Joint Pain", "Rheumatoid Arthritis", "Joint Swelling & Stiffness"],
-    itemsTa: ["முழங்கால் வலி", "மூட்டு வலி", "ரியுமட்டாய்ட் ஆர்த்ரைடிஸ்", "மூட்டு வீக்கம் & பிடிப்பு"],
+    itemsTa: ["முழங்கால் வலி", "மூட்டு வலி", "மூட்டு வாதம்", "மூட்டு வீக்கம் மற்றும் பிடிப்பு"],
     image:
       "/kneee.avif",
   },

@@ -56,7 +56,7 @@ export default function Navbar() {
               <button
                 key={item}
                 onClick={() => chooseLanguage(item)}
-                className={`rounded-full px-2.5 py-1.5 text-[11px] font-extrabold transition sm:px-3 sm:text-xs ${
+                className={`cursor-pointer rounded-full px-2.5 py-1.5 text-[11px] font-extrabold transition sm:px-3 sm:text-xs ${
                   language === item
                     ? "bg-white text-[var(--vk-pink)] shadow-[0_4px_14px_rgba(1,90,54,0.12)]"
                     : "text-[var(--vk-green-dark)] hover:bg-white/70"
@@ -72,7 +72,7 @@ export default function Navbar() {
   onClick={() =>
     window.dispatchEvent(new CustomEvent("vk-open-booking"))
   }
-  className="rounded-full bg-[var(--vk-pink)] px-4 py-2 text-xs font-extrabold text-white shadow-[0_10px_24px_rgba(255,74,122,0.28)] transition hover:-translate-y-0.5 hover:bg-[var(--vk-green)] sm:px-6 sm:py-2.5 sm:text-sm"
+  className="cursor-pointer rounded-full bg-[var(--vk-pink)] px-4 py-2 text-xs font-extrabold text-white shadow-[0_10px_24px_rgba(255,74,122,0.28)] transition hover:-translate-y-0.5 hover:bg-[var(--vk-green)] sm:px-6 sm:py-2.5 sm:text-sm"
 >
   {copy.cta}
 </button>
