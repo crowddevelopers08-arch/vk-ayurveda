@@ -94,9 +94,11 @@ export default function FAQ() {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[var(--vk-green-dark)]/74 via-[var(--vk-green-dark)]/18 to-transparent" />
           <div className="absolute bottom-5 left-5 right-5 sm:bottom-6 sm:left-6 sm:right-6">
-            <p className="text-[10px] font-extrabold uppercase tracking-[0.16em] text-[var(--vk-lime)] sm:text-[12px] sm:tracking-[0.24em]">
-              {copy.eyebrow}
-            </p>
+            {copy.eyebrow ? (
+              <p className="inline-flex w-fit rounded-full bg-[rgba(200,150,12,0.12)] px-3 py-1.5 text-[10px] font-extrabold uppercase tracking-[0.16em] text-[var(--vk-green-dark)] shadow-[0_8px_24px_rgba(0,63,42,0.28)] ring-1 ring-white/15 backdrop-blur-sm sm:px-4 sm:text-[12px] sm:tracking-[0.24em]">
+                {copy.eyebrow}
+              </p>
+            ) : null}
             <h2
               className={`mt-2 max-w-md font-serif font-black leading-[1.12] text-white ${
                 language === "ta"

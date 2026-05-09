@@ -53,12 +53,12 @@ const sectionCopy = {
   en: {
     titleLine1: "Why Patients Choose",
     titleLine2: "VK Ayurveda",
-    cta: "If Yes, Pravaayu Can Help!",
+    cta: "If Yes, vk AYURVEDA  Can Help!",
   },
   ta: {
     titleLine1: "நோயாளிகள் ஏன்",
     titleLine2: "VK Ayurveda-வை தேர்வு செய்கிறார்கள்",
-    cta: "ஆம் என்றால், Pravaayu உதவும்!",
+    cta: "ஆம் என்றால், vk AYURVEDA உதவும்!",
   },
 } satisfies Record<Language, { titleLine1: string; titleLine2: string; cta: string }>;
 
