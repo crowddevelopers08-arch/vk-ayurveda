@@ -31,7 +31,7 @@ const badges = [
 
 const heroCopy = {
   en: {
-    tag: "Ayurvedic Pain Relief - Mumbai",
+    tag: "Ayurvedic Pain Relief",
     titleLines: ["Back, Neck & Joint", "Pain Relief -"],
     titleHighlight: "Naturally.",
     subtitle: [
