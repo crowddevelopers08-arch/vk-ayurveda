@@ -198,7 +198,7 @@ export default function AyurvedaBanner() {
       {conditions.map((c, i) => (
         <div key={i} style={{
           position: "absolute", inset: 0,
-          backgroundImage: `url('${c.image}')`,
+          backgroundImage: `linear-gradient(rgba(239,33,80,0.24), rgba(239,33,80,0.24)), url('${c.image}')`,
           backgroundSize: "cover",
           backgroundPosition: isMobile ? "60% top" : "center top",
           opacity: i === active ? 1 : 0,
@@ -210,11 +210,11 @@ export default function AyurvedaBanner() {
       {/* Bottom-to-top gradient: image shows at top, dark content area at bottom */}
       <div style={{
         position: "absolute", inset: 0, zIndex: 2,
-        background: "linear-gradient(to top, rgba(1,16,8,0.96) 0%, rgba(1,16,8,0.80) 22%, rgba(1,16,8,0.44) 42%, rgba(1,16,8,0.12) 62%, rgba(1,16,8,0.02) 80%, transparent 100%)",
+        background: "linear-gradient(to top, rgba(1,16,8,0.96) 0%, rgba(1,16,8,0.80) 22%, rgba(1,16,8,0.44) 42%, rgba(1,16,8,0.12) 62%, rgba(1,16,8,0.02) 80%, rgba(1,16,8,0.14) 100%)",
       }} />
 
       {/* Thin side vignette to frame the image */}
-      <div style={{ position: "absolute", inset: 0, zIndex: 2, background: "radial-gradient(ellipse at center, transparent 55%, rgba(1,10,5,0.45) 100%)" }} />
+      <div style={{ position: "absolute", inset: 0, zIndex: 2, background: "linear-gradient(90deg, rgba(1,10,5,0.54) 0%, rgba(1,10,5,0.28) 36%, transparent 66%), radial-gradient(ellipse at center, transparent 58%, rgba(1,10,5,0.38) 100%)" }} />
 
       {/* Gold top accent bar */}
       <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: 3, zIndex: 10, background: "linear-gradient(90deg, var(--vk-pink) 0%, var(--vk-lime) 35%, rgba(232,184,75,0.5) 65%, transparent 100%)" }} />
