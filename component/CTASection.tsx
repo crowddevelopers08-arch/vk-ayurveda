@@ -13,7 +13,7 @@ const sectionCopy = {
     consultation: "Doctor Consultation",
     fee: "₹150 Only",
     book: "Book Consultation Now",
-    whatsapp: "WhatsApp: 99966 60102",
+    whatsapp: "+91 99966 60102",
   },
   ta: {
     titleLine1: "தினமும் வலியுடன்",
@@ -22,7 +22,7 @@ const sectionCopy = {
     consultation: "ஆலோசனை",
     fee: "₹150 மட்டும்",
     book: "அழைக்க / வாட்ஸ்அப்: 99966 60102",
-    whatsapp: "WhatsApp: 99966 60102",
+    whatsapp: "+91 99966 60102",
   },
 } satisfies Record<Language, {
   titleLine1: string;
@@ -81,7 +81,7 @@ export default function CTASection() {
               {copy.book}
             </button>
             <a
-              href="https://wa.me/919996660102"
+              href="tel:+91 9996660102"
               className="w-full rounded-full border-2 border-black/60 px-5 py-3.5 text-sm font-semibold text-black transition hover:border-white hover:bg-white/15 sm:w-auto sm:px-8 sm:text-base"
             >
               {copy.whatsapp}

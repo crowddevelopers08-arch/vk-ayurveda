@@ -41,7 +41,7 @@ const heroCopy = {
     conditions: ["Back Pain", "Neck Pain", "Joint Pain", "Arthritis"],
     badges: ["NABH Certified Hospital", "4.8★ Google Rating", "40,000+ Patients Treated"],
     appointment: "Book Appointment",
-    contactLabel: "WhatsApp:",
+    contactLabel: "",
     consultation: "Consultation",
     only: "Only",
     limitedSlots: "Limited slots available daily",
@@ -63,7 +63,7 @@ const heroCopy = {
     badges: ["NABH மருத்துவமனை", "4.8★ மதிப்பீடு", "40,000+ நோயாளிகள்"],
     appointment: "ஆலோசனை பதிவு செய்ய",
     contactLabel: "அழைக்க / வாட்ஸ்அப்:",
-    consultation: "ஆலோசனை",
+    consultation: "",
     only: "மட்டும்",
     limitedSlots: "தினமும் குறைந்த இடங்கள் மட்டுமே",
     treatment: "7–14 நாளில் நிவாரணம்",
@@ -223,7 +223,7 @@ export default function AyurvedaBanner() {
       <div style={{ flex: 1 }} />
 
       {/* ── Bottom content block ── */}
-      <div style={{ position: "relative", zIndex: 5, width: "100%", padding: isMobile ? "77px 22px 44px" : "0 56px 52px" }}>
+      <div style={{ position: "relative", zIndex: 5, width: "100%", padding: isMobile ? "77px 30px 44px" : "0 56px 52px" }}>
 
         {/* Two-column on desktop */}
         <div style={{ display: "flex", flexDirection: isMobile ? "column" : "row", alignItems: isMobile ? "stretch" : "flex-end", gap: isMobile ? 20 : 48, maxWidth: 1280 }}>
