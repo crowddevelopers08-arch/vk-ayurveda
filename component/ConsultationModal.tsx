@@ -101,14 +101,33 @@ export default function ConsultationModal() {
     if (e.target === backdropRef.current) close();
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitting(true);
-    setTimeout(() => {
+
+    try {
+      const res = await fetch("/api/submissions", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          source: "Consultation Modal",
+          name: fields.name,
+          phone: fields.phone,
+          concern: fields.condition,
+          pageUrl: window.location.href,
+        }),
+      });
+
+      if (!res.ok) throw new Error("Submission failed");
+
       setSubmitting(false);
       close();
       router.push("/thank-you");
-    }, 600);
+    } catch (err) {
+      console.error("Consultation submission failed:", err);
+      setSubmitting(false);
+      alert("Sorry, we could not submit your request. Please try again.");
+    }
   };
 
   if (!open) return null;
