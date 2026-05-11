@@ -27,7 +27,11 @@ export const metadata: Metadata = {
       { url: "/vk-logos.jpeg", sizes: "32x32", type: "image/png" },
     ],
     apple: [
-      { url: "/vk-logos.jpeg", sizes: "180x180", type: "image/png" },
+      {
+        url: "/vk-logos.jpeg",
+        sizes: "180x180",
+        type: "image/png",
+      },
     ],
     other: [
       {
@@ -57,18 +61,30 @@ export default function RootLayout({
       className={`${dmSans.variable} ${playfair.variable} h-full scroll-smooth antialiased`}
     >
       <head>
-        {/* Google Analytics */}
+        {/* Google Tag (GA4 + Google Ads) */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-50TSQSZ6KT"
           strategy="afterInteractive"
         />
 
-        <Script id="google-analytics" strategy="afterInteractive">
+        {/* Google Analytics + Google Ads */}
+        <Script id="google-tags" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
+
             gtag('js', new Date());
+
+            // Google Analytics (GA4)
             gtag('config', 'G-50TSQSZ6KT');
+
+            // Google Ads Base Tag
+            gtag('config', 'AW-11005175836');
+
+            // Google Ads Phone Conversion Tracking
+            gtag('config', 'AW-11005175836/tVo_COnlhKscEJzQ1v8o', {
+              phone_conversion_number: '09996660102'
+            });
           `}
         </Script>
 
