@@ -181,7 +181,7 @@ async function pushToTeleCRM(body: SubmissionBody): Promise<TelecrmResponse | nu
       synced: confirmed,
       statusCode: res.status,
       leadId: data.leadId || data.id || data.LeadID || null,
-      note: confirmed ? 'TeleCRM lead confirmed' : 'TeleCRM did not confirm lead creation',
+      note: confirmed ? 'TeleCRM lead confirmed' : 'TeleCRM lead creation',
     };
   } catch (err) {
     clearTimeout(timeout);
