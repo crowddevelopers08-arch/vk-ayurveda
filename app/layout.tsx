@@ -22,9 +22,20 @@ export const metadata: Metadata = {
 
   icons: {
     icon: [
-      { url: "/vk-logos.jpeg", sizes: "any" },
-      { url: "/vk-logos.jpeg", sizes: "16x16", type: "image/png" },
-      { url: "/vk-logos.jpeg", sizes: "32x32", type: "image/png" },
+      {
+        url: "/vk-logos.jpeg",
+        sizes: "any",
+      },
+      {
+        url: "/vk-logos.jpeg",
+        sizes: "16x16",
+        type: "image/png",
+      },
+      {
+        url: "/vk-logos.jpeg",
+        sizes: "32x32",
+        type: "image/png",
+      },
     ],
     apple: [
       {
@@ -61,13 +72,12 @@ export default function RootLayout({
       className={`${dmSans.variable} ${playfair.variable} h-full scroll-smooth antialiased`}
     >
       <head>
-        {/* Google Tag (GA4 + Google Ads) */}
+        {/* Google Tag - GA4 + Google Ads */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-50TSQSZ6KT"
           strategy="afterInteractive"
         />
 
-        {/* Google Analytics + Google Ads */}
         <Script id="google-tags" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
