@@ -1,9 +1,14 @@
-import PrivacyPageShell from "@/component/PrivacyPageShell";
+import LegalPageShell from "@/component/LegalPageShell";
+import PrivacyPolicy from "@/component/PrivacyPolicy";
 
 export const metadata = {
   title: "Privacy Policy — VK Ayurveda",
 };
 
 export default function PrivacyPolicyPage() {
-  return <PrivacyPageShell />;
+  return (
+    <LegalPageShell>
+      <PrivacyPolicy />
+    </LegalPageShell>
+  );
 }

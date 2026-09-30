@@ -1,9 +1,4 @@
-"use client";
-
-import Link from "next/link";
-import { useEffect, useState } from "react";
-
-type Language = "en" | "ta";
+import LegalPage, { type Language, type LegalContent } from "./LegalPage";
 
 const sections = {
   en: [
@@ -126,138 +121,23 @@ const sections = {
   ],
 };
 
-const pageCopy = {
+const content: Record<Language, LegalContent> = {
   en: {
-    eyebrow: "VK Ayurveda",
     title: "Privacy Policy",
-    effectiveDate: "Effective date: 1 May 2025",
+    effectiveLabel: "Effective date",
     intro: "At VK Ayurveda we respect your privacy. This policy explains what personal information we collect, why we collect it, and how we protect it when you use our website or book a consultation.",
-    contactEyebrow: "Questions or Requests",
-    contactTitle: "Contact Us",
     contactIntro: "If you have any questions about this Privacy Policy or wish to exercise your rights, please reach us through any of the channels below.",
-    phoneLabel: "Phone / WhatsApp",
-    locationLabel: "Location",
-    location: "VK Ayurveda, Tamil Nadu, India",
-    backHome: "← Back to Home",
+    sections: sections.en,
   },
   ta: {
-    eyebrow: "VK Ayurveda",
     title: "தனியுரிமை கொள்கை",
-    effectiveDate: "நடைமுறை தேதி: 1 மே 2025",
+    effectiveLabel: "நடைமுறை தேதி",
     intro: "VK Ayurveda-வில் நாங்கள் உங்கள் தனியுரிமையை மதிக்கிறோம். நீங்கள் எங்கள் இணையதளத்தை பயன்படுத்தும்போது அல்லது ஆலோசனை முன்பதிவு செய்யும்போது நாங்கள் என்ன தனிப்பட்ட தகவல்களை சேகரிக்கிறோம், ஏன் சேகரிக்கிறோம், எவ்வாறு பாதுகாக்கிறோம் என்பதை இந்த கொள்கை விளக்குகிறது.",
-    contactEyebrow: "கேள்விகள் அல்லது கோரிக்கைகள்",
-    contactTitle: "எங்களை தொடர்பு கொள்ளுங்கள்",
     contactIntro: "இந்த தனியுரிமை கொள்கை குறித்து ஏதேனும் கேள்விகள் இருந்தால் அல்லது உங்கள் உரிமைகளை பயன்படுத்த விரும்பினால், கீழே உள்ள சேனல்களில் ஏதேனும் ஒன்று மூலம் எங்களை அணுகுங்கள்.",
-    phoneLabel: "தொலைபேசி / WhatsApp",
-    locationLabel: "இருப்பிடம்",
-    location: "VK Ayurveda, தமிழ்நாடு, இந்தியா",
-    backHome: "← முகப்புக்கு திரும்பு",
+    sections: sections.ta,
   },
 };
 
 export default function PrivacyPolicy() {
-  const [language, setLanguage] = useState<Language>("en");
-  const t = pageCopy[language];
-  const sectionList = sections[language];
-
-  useEffect(() => {
-    const savedLanguage = window.localStorage.getItem("vk-language");
-    if (savedLanguage === "en" || savedLanguage === "ta") setLanguage(savedLanguage);
-
-    const handleLanguageChange = (event: Event) => {
-      const next = (event as CustomEvent<Language>).detail;
-      if (next === "en" || next === "ta") setLanguage(next);
-    };
-    window.addEventListener("vk-language-change", handleLanguageChange);
-    return () => window.removeEventListener("vk-language-change", handleLanguageChange);
-  }, []);
-
-  return (
-    <main className="bg-[var(--vk-lime-soft)] px-4 py-12 text-[var(--vk-green-dark)] sm:px-6 sm:py-16 mt-10">
-      <div className="mx-auto max-w-3xl">
-        {/* Header card */}
-        <div className="mb-8 overflow-hidden rounded-tl-[42px] rounded-br-[42px] bg-[var(--vk-green-dark)] px-8 py-10 shadow-[0_24px_70px_rgba(1,90,54,0.22)] sm:px-12 sm:py-14">
-          <p className="mb-3 text-xs font-extrabold uppercase tracking-[0.2em] text-[var(--vk-lime)]">
-            {t.eyebrow}
-          </p>
-          <h1 className="mb-4 font-serif text-[clamp(2rem,7vw,3.6rem)] font-black leading-[1.1] text-white">
-            {t.title}
-          </h1>
-          <p className="text-[15px] leading-[1.75] text-white/60">
-            {t.effectiveDate}
-          </p>
-          <p className="mt-3 text-[16px] leading-[1.75] text-white/75">
-            {t.intro}
-          </p>
-        </div>
-
-        {/* Policy sections */}
-        <div className="space-y-5">
-          {sectionList.map((section, index) => (
-            <div
-              key={index}
-              className="overflow-hidden rounded-tl-[28px] rounded-br-[28px] bg-white px-7 py-7 shadow-[0_8px_30px_rgba(1,90,54,0.08)] sm:px-9"
-            >
-              <div className="mb-4 flex items-center gap-3">
-                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[var(--vk-lime-soft)] font-serif text-[13px] font-black text-[var(--vk-green)]">
-                  {index + 1}
-                </span>
-                <h2 className="font-serif text-[clamp(1.1rem,3.5vw,1.45rem)] font-black leading-tight text-[var(--vk-green-dark)]">
-                  {section.title}
-                </h2>
-              </div>
-              <div className="space-y-3 pl-11">
-                {section.content.map((para, i) => (
-                  <p key={i} className="text-[15px] leading-[1.8] text-[#4b5563]">
-                    {para}
-                  </p>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Contact card */}
-        <div className="mt-8 overflow-hidden rounded-tl-[28px] rounded-br-[28px] bg-[var(--vk-lime-soft)] px-7 py-7 ring-1 ring-[var(--vk-green)]/15 sm:px-9">
-          <p className="mb-1 text-xs font-extrabold uppercase tracking-[0.16em] text-[var(--vk-pink)]">
-            {t.contactEyebrow}
-          </p>
-          <h3 className="mb-3 font-serif text-[1.35rem] font-black text-[var(--vk-green-dark)]">
-            {t.contactTitle}
-          </h3>
-          <p className="mb-5 text-[15px] leading-[1.75] text-[#4b5563]">
-            {t.contactIntro}
-          </p>
-          <div className="grid gap-3 sm:grid-cols-2">
-            <div className="rounded-tl-[18px] rounded-br-[18px] bg-white p-4">
-              <p className="text-xs font-extrabold uppercase tracking-[0.14em] text-[var(--vk-green)]">
-                {t.phoneLabel}
-              </p>
-              <p className="mt-1 text-lg font-black text-[var(--vk-green-dark)]">
-                99966 60102
-              </p>
-            </div>
-            <div className="rounded-tl-[18px] rounded-br-[18px] bg-white p-4">
-              <p className="text-xs font-extrabold uppercase tracking-[0.14em] text-[var(--vk-green)]">
-                {t.locationLabel}
-              </p>
-              <p className="mt-1 text-[14px] font-bold leading-snug text-[var(--vk-green-dark)]">
-                {t.location}
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Back link */}
-        <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-          <Link
-            href="/"
-            className="inline-flex items-center justify-center rounded-full border-2 border-[var(--vk-green)] px-7 py-3 text-sm font-extrabold text-[var(--vk-green)] transition hover:-translate-y-0.5 hover:bg-[var(--vk-green)] hover:text-white"
-          >
-            {t.backHome}
-          </Link>
-        </div>
-      </div>
-    </main>
-  );
+  return <LegalPage path="/privacy-policy" content={content} />;
 }
