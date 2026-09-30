@@ -72,7 +72,7 @@ export default function RootLayout({
       className={`${dmSans.variable} ${playfair.variable} h-full scroll-smooth antialiased`}
     >
       <head>
-        {/* Google Tag - GA4 + Google Ads */}
+        {/* Google Tag - GA4 + Google Ads*/}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-50TSQSZ6KT"
           strategy="afterInteractive"
