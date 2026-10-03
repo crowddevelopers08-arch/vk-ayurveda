@@ -6,13 +6,22 @@ const DATA_DIR = path.join(process.cwd(), 'data');
 const FILE_PATH = path.join(DATA_DIR, 'submissions.csv');
 const HEADERS = ['Timestamp', 'Source', 'Name', 'Phone', 'Condition', 'URL', 'TeleCRM'];
 
+// Forms that write to their own Google Sheet tab. The tab is chosen here on the server
+// (never taken from the browser), keyed by the form name the page sends.
+const FORM_SHEETS: Record<string, { sheetName: string }> = {
+  'vk-lp-leads': { sheetName: 'generic leads' },
+};
+const FORM_SHEET_HEADERS = ['Timestamp', 'Source', 'Form', 'Name', 'Phone', 'Condition', 'Branch', 'URL', 'TeleCRM'];
+
 export const runtime = 'nodejs';
 
 type SubmissionBody = {
   source: string;
+  formName: string;
   name: string;
   phone: string;
   concern: string;
+  branch: string;
   pageUrl: string;
 };
 
@@ -30,9 +39,11 @@ function toText(value: unknown): string {
 function normalizeSubmission(body: Record<string, unknown>): SubmissionBody {
   return {
     source: toText(body.source) || 'Consultation Modal',
+    formName: toText(body.formName),
     name: toText(body.name),
     phone: toText(body.phone),
     concern: toText(body.concern),
+    branch: toText(body.branch),
     pageUrl: toText(body.pageUrl),
   };
 }
@@ -63,15 +74,11 @@ async function pushToGAS(body: SubmissionBody, timestamp: string, telecrmStatus:
   const url = process.env.NEXT_PUBLIC_GAS_URL;
   if (!url) return null;
 
-  const row = [
-    timestamp,
-    body.source,
-    body.name,
-    body.phone,
-    body.concern,
-    body.pageUrl,
-    telecrmStatus,
-  ];
+  const formSheet = FORM_SHEETS[body.formName];
+  const headers = formSheet ? FORM_SHEET_HEADERS : HEADERS;
+  const row = formSheet
+    ? [timestamp, body.source, body.formName, body.name, body.phone, body.concern, body.branch, body.pageUrl, telecrmStatus]
+    : [timestamp, body.source, body.name, body.phone, body.concern, body.pageUrl, telecrmStatus];
 
   const res = await fetch(url, {
     method: 'POST',
@@ -86,7 +93,8 @@ async function pushToGAS(body: SubmissionBody, timestamp: string, telecrmStatus:
       pageUrl: body.pageUrl,
       url: body.pageUrl,
       telecrm: telecrmStatus,
-      headers: HEADERS,
+      ...(formSheet && { sheetName: formSheet.sheetName, formName: body.formName, branch: body.branch }),
+      headers,
       row,
     }),
   });
@@ -133,6 +141,8 @@ async function pushToTeleCRM(body: SubmissionBody): Promise<TelecrmResponse | nu
       { type: 'SYSTEM_NOTE', text: `Source: ${body.source || 'Website'}` },
       { type: 'SYSTEM_NOTE', text: `URL: ${body.pageUrl || 'Not specified'}` },
       { type: 'SYSTEM_NOTE', text: `Condition: ${body.concern || 'Not specified'}` },
+      ...(body.formName ? [{ type: 'SYSTEM_NOTE', text: `Form: ${body.formName}` }] : []),
+      ...(body.branch ? [{ type: 'SYSTEM_NOTE', text: `Branch: ${body.branch}` }] : []),
     ],
   };
 
@@ -216,7 +226,7 @@ export async function POST(req: NextRequest) {
       body.source,
       body.name,
       body.phone,
-      body.concern,
+      body.branch ? `${body.concern} | Branch: ${body.branch}` : body.concern,
       body.pageUrl,
       telecrmStatus,
     ];

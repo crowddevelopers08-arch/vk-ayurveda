@@ -38,7 +38,7 @@ export default function Navbar() {
         {/* LOGO */}
         <a href="#hero" className="flex items-center">
           <Image
-            src="/vk-logos.png"
+            src="https://res.cloudinary.com/lb2my6df/image/upload/v1791027125/vk-logos.png"
             alt="VK Ayurveda logo"
             width={150}
             height={52}

@@ -11,7 +11,7 @@ const conditionGroups = [
     items: ["Slip Disc", "Sciatica", "Lumbar Spondylosis"],
     itemsTa: ["முதுகுத் தட்டு வழிதல்", "சயாட்டிகா நரம்பு வலி", "கீழ் முதுகெலும்பு தேய்மானம்"],
     image:
-      "/back.avif",
+      "https://res.cloudinary.com/lb2my6df/image/upload/v1791027116/back.avif",
   },
   {
     title: "Neck Pain",
@@ -27,7 +27,7 @@ const conditionGroups = [
     items: ["Knee Pain", "Joint Pain", "Rheumatoid Arthritis", "Joint Swelling & Stiffness"],
     itemsTa: ["முழங்கால் வலி", "மூட்டு வலி", "மூட்டு வாதம்", "மூட்டு வீக்கம் மற்றும் பிடிப்பு"],
     image:
-      "/kneee.avif",
+      "https://res.cloudinary.com/lb2my6df/image/upload/v1791027122/kneee.avif",
   },
 ];
 

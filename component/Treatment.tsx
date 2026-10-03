@@ -10,7 +10,7 @@ const stats = [
     label: "Body Detox",
     labelTa: "உடல் சுத்திகரிப்பு",
     image:
-      "/Body-Detox.png",
+      "https://res.cloudinary.com/lb2my6df/image/upload/v1791027119/Body-Detox.png",
     className: "md:col-start-1 md:row-start-1",
   },
   {
@@ -18,7 +18,7 @@ const stats = [
     label: "Pain Relief",
     labelTa: "வலி நிவாரணம்",
     image:
-      "/Pain-Relief.png",
+      "https://res.cloudinary.com/lb2my6df/image/upload/v1791027123/Pain-Relief.png",
     className: "md:col-start-1 md:row-start-2",
   },
   {
@@ -26,7 +26,7 @@ const stats = [
     label: "Muscle Relaxation",
     labelTa: "தசை தளர்வு",
     image:
-      "/Muscle-Relaxation.png",
+      "https://res.cloudinary.com/lb2my6df/image/upload/v1791027123/Muscle-Relaxation.png",
     className: "md:col-start-2 md:row-span-2 md:row-start-1",
     large: true,
   },
@@ -35,7 +35,7 @@ const stats = [
     label: "Joint Mobility Improvement",
     labelTa: "மூட்டு இயக்க மேம்பாடு",
     image:
-      "/Joint-Mobility-Improvement.png",
+      "https://res.cloudinary.com/lb2my6df/image/upload/v1791027122/Joint-Mobility-Improvement.png",
     className: "md:col-start-3 md:row-start-1",
   },
   {
@@ -43,7 +43,7 @@ const stats = [
     label: "Better Body Strength",
     labelTa: "உடல் பலம் அதிகரிப்பு",
     image:
-      "/Ayurvedic-Therapies.avif",
+      "https://res.cloudinary.com/lb2my6df/image/upload/v1791027116/Ayurvedic-Therapies.avif",
     className: "md:col-start-3 md:row-start-2",
   },
 ];

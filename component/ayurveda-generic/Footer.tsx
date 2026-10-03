@@ -64,7 +64,7 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer className="bg-[var(--vk-green-dark)] px-6 pb-8 pt-12 max-sm:pt-6 text-center max-sm:mb-5">
+    <footer className="bg-[var(--vk-green-dark)] px-6 pb-8 pt-12 max-sm:pt-6 text-center">
       <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-[18px] py-2 text-[13px] font-medium text-white/70">
         {copy.badge}
       </div>

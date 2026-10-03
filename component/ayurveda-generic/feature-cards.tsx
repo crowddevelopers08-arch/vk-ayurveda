@@ -5,25 +5,25 @@ const steps = [
   {
     title: "Consult",
     description: "Meet the doctor for a ₹150 assessment of your back, neck or joint problem.",
-    image: "/generic-ban-1.png",
+    image: "https://res.cloudinary.com/lb2my6df/image/upload/v1791027119/generic-ban-1.png",
     alt: "Ayurveda doctor consulting a patient",
   },
   {
     title: "Plan",
     description: "Get a personalised plan explaining therapies, duration and whether admission is needed.",
-    image: "/doctors.png",
+    image: "https://res.cloudinary.com/lb2my6df/image/upload/v1791027117/doctors.png",
     alt: "Doctor explaining the spine with a model",
   },
   {
     title: "Treat",
     description: "Ayurvedic therapies and Panchakarma care, supervised by experienced doctors.",
-    image: "/generic-ban-2.png",
+    image: "https://res.cloudinary.com/lb2my6df/image/upload/v1791027119/generic-ban-2.png",
     alt: "Ayurvedic therapy in a traditional setting",
   },
   {
     title: "Follow up",
     description: "Regular reviews to track progress and adjust your plan.",
-    image: "/Ayurvedic-Doctors.png",
+    image: "https://res.cloudinary.com/lb2my6df/image/upload/v1791027116/Ayurvedic-Doctors.png",
     alt: "VK Ayurveda doctors team",
   },
 ];

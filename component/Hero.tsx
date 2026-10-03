@@ -11,15 +11,15 @@ const conditions = [
   },
   {
     label: "Neck Pain",
-    image: "/neck.png",
+    image: "https://res.cloudinary.com/lb2my6df/image/upload/v1791027123/neck.png",
   },
   {
     label: "Joint Pain",
-    image: "/joint.png",
+    image: "https://res.cloudinary.com/lb2my6df/image/upload/v1791027122/joint.png",
   },
   {
     label: "Arthritis",
-    image: "/arthr.png",
+    image: "https://res.cloudinary.com/lb2my6df/image/upload/v1791027115/arthr.png",
   },
 ];
 

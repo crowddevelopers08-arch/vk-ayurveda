@@ -15,12 +15,12 @@ const concerns = [
   "Other",
 ];
 
-const backgrounds = ["/generic-ban-1.png", "/generic-ban-2.png", "/generic-ban-3.png"];
+const backgrounds = ["https://res.cloudinary.com/lb2my6df/image/upload/v1791027119/generic-ban-1.png", "https://res.cloudinary.com/lb2my6df/image/upload/v1791027119/generic-ban-2.png", "https://res.cloudinary.com/lb2my6df/image/upload/v1791027120/generic-ban-3.png"];
 // Portrait versions shown on mobile/tablet (below lg), rotated in step with the desktop set
-const mobileBackgrounds = ["/generic-mbl-1.png", "/generic-mbl-2.png", "/generic-mbl-3.png"];
+const mobileBackgrounds = ["https://res.cloudinary.com/lb2my6df/image/upload/v1791027121/generic-mbl-1.png", "https://res.cloudinary.com/lb2my6df/image/upload/v1791027121/generic-mbl-2.png", "https://res.cloudinary.com/lb2my6df/image/upload/v1791027120/generic-mbl-3.png"];
 
 // TODO: replace with the real VK Ayurveda branch names
-const branches = ["Branch 1", "Branch 2", "Branch 3"];
+const branches = ["Branch 1", "Branch 2", "Online Consultation"];
 
 const highlights = [
   {
@@ -177,16 +177,18 @@ export default function Hero() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          source: "Generic Hero Form",
+          source: "Ayurveda leads",
+          formName: "vk-lp-leads",
           name: fields.name,
           phone: fields.phone,
-          concern: `${fields.concern} | Branch: ${fields.branch}`,
+          concern: fields.concern,
+          branch: fields.branch,
           pageUrl: window.location.href,
         }),
       });
 
       if (!res.ok) throw new Error("Submission failed");
-      router.push("/thank-you");
+      router.push("/generic/thank-you");
     } catch (err) {
       console.error("Hero form submission failed:", err);
       setSubmitting(false);
@@ -235,10 +237,10 @@ export default function Hero() {
       <div className="relative mx-auto flex max-w-[1400px] flex-col px-5 py-10 sm:px-8 lg:h-full lg:px-10 lg:py-[2.5vh]">
         {/* Three columns: text · video · form */}
         <div className="grid flex-1 items-center gap-8 lg:grid-cols-[1fr_1.3fr_0.9fr] lg:gap-[clamp(1.25rem,2vw,2.25rem)]">
-          {/* Left — text (on mobile/tablet it sits on a soft card so it reads cleanly over the photo) */}
-          <div className="relative min-w-0 max-lg:rounded-tl-[28px] max-lg:rounded-br-[28px] max-lg:border max-lg:border-white/70 max-lg:bg-[var(--vk-lime-soft)]/85 max-lg:px-5 max-lg:py-6 max-lg:shadow-[0_18px_40px_rgba(1,90,54,0.12)]">
+          {/* Left — text (centred on mobile/tablet, with a soft light glow so it reads over the photo) */}
+          <div className="relative min-w-0 max-lg:text-center max-lg:[text-shadow:0_1px_12px_rgba(242,249,213,0.95),0_0_2px_rgba(242,249,213,0.9)]">
             <Animate from="left">
-            <span className="inline-flex items-center gap-2 rounded-full border border-[var(--vk-green)]/15 bg-white px-4 py-1.5 text-[12.5px] font-extrabold uppercase tracking-[0.16em] text-[var(--vk-green)]">
+            <span className="inline-flex items-center gap-2 whitespace-nowrap rounded-full border border-[var(--vk-green)]/15 bg-white px-3.5 py-1.5 text-[10.5px] font-extrabold uppercase tracking-[0.1em] text-[var(--vk-green)] [text-shadow:none] sm:px-4 sm:text-[12.5px] sm:tracking-[0.16em]">
               <span className="h-1.5 w-1.5 rounded-full bg-[var(--vk-pink)]" />
               NABH Certified Ayurvedic Hospital
             </span>
@@ -252,7 +254,7 @@ export default function Hero() {
             </Animate>
 
             <Animate from="left" delay={300}>
-            <p className="mt-[1.6vh] max-w-[440px] text-[clamp(0.95rem,min(1.1vw,2.05vh),1.12rem)] leading-[1.65] text-[#374151] lg:text-[#4b5563]">
+            <p className="mt-[1.6vh] max-w-[440px] max-lg:mx-auto text-[clamp(0.95rem,min(1.1vw,2.05vh),1.12rem)] leading-[1.65] text-black lg:text-[#4b5563]">
               Get your condition assessed in a one-to-one consultation and know the right treatment plan for you — before deciding anything else.
             </p>
             </Animate>
@@ -301,7 +303,7 @@ export default function Hero() {
                 <video
                   className="h-full w-full object-cover"
                   src="/vk-hero.mp4"
-                  poster="/Panchakarma-Care.avif"
+                  poster="https://res.cloudinary.com/lb2my6df/image/upload/v1791027123/Panchakarma-Care.avif"
                   autoPlay
                   muted
                   loop
@@ -388,7 +390,7 @@ export default function Hero() {
               <button
                 type="submit"
                 disabled={submitting}
-                className="w-full rounded-full bg-[var(--vk-pink)] py-[min(1.45vh,14px)] text-[15px] font-extrabold text-white shadow-[0_10px_28px_rgba(239,33,80,0.28)] transition hover:-translate-y-0.5 hover:bg-[var(--vk-pink-dark)] disabled:opacity-70"
+                className="w-full rounded-full bg-[var(--vk-pink)] py-[min(1.45vh,14px)] text-[15px] font-extrabold text-white transition hover:-translate-y-0.5 hover:bg-[var(--vk-pink-dark)] disabled:opacity-70"
               >
                 {submitting ? "Submitting…" : "Book My Consultation →"}
               </button>
@@ -401,22 +403,22 @@ export default function Hero() {
 
         {/* Highlights bar */}
         <div className="mt-10 lg:mt-[2.5vh]">
-          <div className="grid grid-cols-1 gap-y-5 rounded-tl-[28px] rounded-br-[28px] bg-[var(--vk-green-dark)] px-6 py-6 shadow-[0_20px_50px_rgba(0,58,34,0.3)] sm:grid-cols-2 sm:px-8 lg:grid-cols-4 lg:gap-y-0 lg:py-[1.8vh]">
+          <div className="grid grid-cols-2 gap-x-3 gap-y-5 rounded-tl-[28px] rounded-br-[28px] bg-[var(--vk-green-dark)] px-4 py-5 sm:gap-x-6 sm:py-6 shadow-[0_20px_50px_rgba(0,58,34,0.3)] sm:grid-cols-2 sm:px-8 lg:grid-cols-4 lg:gap-y-0 lg:py-[1.8vh]">
             {highlights.map((item, index) => (
-              <Animate key={item.title} from="up" delay={600 + index * 120}>
+              <Animate key={item.title} from="right" delay={600 + index * 120}>
               <div
-                className={`flex items-center gap-3.5 lg:px-5 ${index > 0 ? "lg:border-l lg:border-white/15" : "lg:pl-0"} ${
+                className={`flex items-center gap-2.5 sm:gap-3.5 lg:px-5 ${index > 0 ? "lg:border-l lg:border-white/15" : "lg:pl-0"} ${
                   index === highlights.length - 1 ? "lg:pr-0" : ""
                 }`}
               >
-                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-[var(--vk-lime)]/40 bg-white/10 text-[var(--vk-lime)]">
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[var(--vk-lime)]/40 bg-white/10 text-[var(--vk-lime)] sm:h-12 sm:w-12">
                   {item.icon}
                 </span>
                 <div>
-                  <h3 className="text-[18px] font-bold leading-snug text-white">
+                  <h3 className="text-[16px] font-bold leading-snug text-white sm:text-[18px]">
                     {item.count ? <CountUp {...item.count} /> : item.title}
                   </h3>
-                  <p className="mt-0.5 text-[14px] leading-[1.5] text-white/65">{item.description}</p>
+                  <p className="mt-0.5 text-[12.5px] leading-[1.4] text-white/65 sm:text-[14px] sm:leading-[1.5]">{item.description}</p>
                 </div>
               </div>
               </Animate>

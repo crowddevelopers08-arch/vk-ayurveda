@@ -90,7 +90,7 @@ export default function FAQ() {
         <div className="relative min-h-[260px] overflow-hidden rounded-tl-[34px] rounded-br-[34px] bg-[var(--vk-green-dark)] shadow-[0_18px_42px_rgba(0,63,42,0.18)] sm:min-h-[430px] sm:rounded-tl-[52px] sm:rounded-br-[52px] sm:shadow-[0_24px_60px_rgba(0,63,42,0.2)]">
           <div
             className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: "url('/Panchakarma-Care.avif')" }}
+            style={{ backgroundImage: "url('https://res.cloudinary.com/lb2my6df/image/upload/v1791027123/Panchakarma-Care.avif')" }}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[var(--vk-green-dark)]/74 via-[var(--vk-green-dark)]/18 to-transparent" />
           <div className="absolute bottom-5 left-5 right-5 sm:bottom-6 sm:left-6 sm:right-6">

@@ -9,43 +9,43 @@ const problems = [
     label: "NABH Certified Hospital",
     labelTa: "NABH சான்றளிக்கப்பட்ட மருத்துவமனை",
     image:
-      "/vk-ayurveda.png",
+      "https://res.cloudinary.com/lb2my6df/image/upload/v1791027125/vk-ayurveda.png",
   },
   {
     label: "4.8★ Google Rating",
     image:
-      "/Google-Rating.png",
+      "https://res.cloudinary.com/lb2my6df/image/upload/v1791027121/Google-Rating.png",
     labelTa: "4.8★ Google மதிப்பீடு",
   },
   {
     label: "40,000+ Patients Treated",
     labelTa: "40,000+ நோயாளிகள் சிகிச்சை பெற்றுள்ளனர்",
     image:
-      "/Patients-Treated.png",
+      "https://res.cloudinary.com/lb2my6df/image/upload/v1791027124/Patients-Treated.png",
   },
   {
     label: "Experienced Ayurvedic Doctors",
     labelTa: "அனுபவமுள்ள ஆயுர்வேத மருத்துவர்கள்",
     image:
-      "/Ayurvedic-Doctors.png",
+      "https://res.cloudinary.com/lb2my6df/image/upload/v1791027116/Ayurvedic-Doctors.png",
   },
   {
     label: "Specialized Pain Treatments",
     labelTa: "சிறப்பு வலி சிகிச்சைகள்",
     image:
-      "/Specialized-Pain.png",
+      "https://res.cloudinary.com/lb2my6df/image/upload/v1791027124/Specialized-Pain.png",
   },
   {
     label: "Affordable Consultation",
     labelTa: "குறைந்த கட்டண ஆலோசனை",
     image:
-      "/Affordable.png",
+      "https://res.cloudinary.com/lb2my6df/image/upload/v1791027115/Affordable.png",
   },
   {
     label: "Safe & Natural Treatment",
     labelTa: "பாதுகாப்பான இயற்கை சிகிச்சை",
     image:
-      "/images10.jpg",
+      "https://res.cloudinary.com/lb2my6df/image/upload/v1791027121/images10.jpg",
   },
 ];
 

@@ -54,7 +54,7 @@ export default function ThankYou() {
           <div className="grid lg:grid-cols-[0.95fr_1.05fr]">
             <div className="relative min-h-[260px] bg-[var(--vk-green-dark)] sm:min-h-[360px] lg:min-h-full">
               <Image
-                src="/Panchakarma-Care.avif"
+                src="https://res.cloudinary.com/lb2my6df/image/upload/v1791027123/Panchakarma-Care.avif"
                 alt="VK Ayurveda care"
                 fill
                 priority

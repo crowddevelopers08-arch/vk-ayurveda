@@ -19,7 +19,7 @@ export default function Navbar() {
       <div className="mx-auto flex h-[90px] max-w-[1380px] items-center justify-between gap-4">
         <a href="/generic#hero" className="flex items-center" aria-label="VK Ayurveda home">
           <Image
-            src="/vk-logos.png"
+            src="https://res.cloudinary.com/lb2my6df/image/upload/v1791027125/vk-logos.png"
             alt="VK Ayurveda logo"
             width={150}
             height={52}

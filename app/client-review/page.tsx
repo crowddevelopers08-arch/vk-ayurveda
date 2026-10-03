@@ -12,7 +12,7 @@ const Review = () => {
             <div className="flex items-center justify-center rounded-tl-[24px] rounded-br-[24px] border border-[var(--vk-green)]/10 bg-white px-5 py-4 shadow-[0_12px_34px_rgba(1,90,54,0.10)]">
               <div className="relative h-16 w-44 sm:h-20 sm:w-56">
                 <Image
-                  src="/vk-logos.png"
+                  src="https://res.cloudinary.com/lb2my6df/image/upload/v1791027125/vk-logos.png"
                   alt="VK Ayurveda logo"
                   fill
                   sizes="(min-width: 640px) 224px, 176px"
