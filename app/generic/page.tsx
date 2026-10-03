@@ -1,4 +1,5 @@
 import CTASection from "@/component/ayurveda-generic/CTASection";
+import MobileActionBar from "@/component/ayurveda-generic/fat-mobile-action-bar";
 import FeatureCards from "@/component/ayurveda-generic/feature-cards";
 import Footer from "@/component/ayurveda-generic/Footer";
 import Hero from "@/component/ayurveda-generic/hero";
@@ -12,6 +13,7 @@ export const metadata = {
 export default function GenericPage() {
   return (
     <main className="overflow-x-clip">
+      <MobileActionBar />
       <Navbar />
       <Hero />
       <FeatureCards />

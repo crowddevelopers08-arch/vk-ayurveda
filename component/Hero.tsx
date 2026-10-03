@@ -7,7 +7,7 @@ type Language = "en" | "ta";
 const conditions = [
   {
     label: "Back Pain",
-    image: "/back.png",
+    image: "https://res.cloudinary.com/lb2my6df/image/upload/v1791029736/back.png",
   },
   {
     label: "Neck Pain",

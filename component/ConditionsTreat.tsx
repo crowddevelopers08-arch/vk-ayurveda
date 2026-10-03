@@ -19,7 +19,7 @@ const conditionGroups = [
     items: ["Cervical Spondylosis", "Neck Stiffness", "Disc Problems"],
     itemsTa: ["கழுத்து முதுகெலும்பு தேய்மானம்", "கழுத்து பிடிப்பு", "முதுகுத்தட்டு பிரச்சினைகள்"],
     image:
-      "/neck.jpg",
+      "https://res.cloudinary.com/lb2my6df/image/upload/v1791029843/neck.jpg",
   },
   {
     title: "Joint & Arthritis",
