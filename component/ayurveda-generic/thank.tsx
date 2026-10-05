@@ -9,7 +9,7 @@ const steps = [
   { title: "Meet the doctor", description: "One-to-one ₹150 consultation and a clear plan." },
 ];
 
-export default function ThankYou() {
+export default function ThankYou({ paymentId }: { paymentId?: string }) {
   return (
     <main className="relative flex min-h-svh items-center overflow-hidden bg-linear-to-b from-[#fbfdf4] to-[var(--vk-lime-soft)] px-4 pb-5 pt-[100px] sm:pb-6 sm:pt-[106px] text-[var(--vk-green-dark)] sm:px-6">
       {/* Bubbles */}
@@ -34,7 +34,7 @@ export default function ThankYou() {
 
         <Animate from="up" delay={120}>
           <p className="mb-2 text-[11px] font-bold uppercase tracking-[0.18em] text-[var(--vk-green)] sm:text-[13px]">
-            Request Received
+            {paymentId ? "Payment Successful" : "Request Received"}
           </p>
         </Animate>
         <Animate from="left" delay={220}>
@@ -47,6 +47,11 @@ export default function ThankYou() {
             Your consultation request has been submitted. Our team will contact you shortly to confirm your
             appointment and guide you with the next steps.
           </p>
+          {paymentId && (
+            <p className="mx-auto mt-2 text-[12px] font-semibold text-[var(--vk-green)] sm:text-[13px]">
+              Payment ID: <span className="font-mono">{paymentId}</span>
+            </p>
+          )}
         </Animate>
 
         {/* What happens next */}

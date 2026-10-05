@@ -1,15 +1,18 @@
-"use client";
-
-import { useEffect } from "react";
 import Navbar from "@/component/ayurveda-generic/Navbar";
 import ThankYou from "@/component/ayurveda-generic/thank";
 
+export default async function ThankYouPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}) {
+  const { payment_id } = await searchParams;
+  const paymentId = typeof payment_id === "string" ? payment_id.slice(0, 40) : undefined;
 
-export default function ThankYouPage() {
   return (
     <>
       <Navbar />
-      <ThankYou />
+      <ThankYou paymentId={paymentId} />
     </>
   );
 }
