@@ -89,7 +89,7 @@ const labelClass =
 type CountUpProps = { to: number; decimals?: number; prefix?: string; suffix?: string; duration?: number };
 
 // Counts from 0 up to `to` once the number scrolls into view, then stops on the final value.
-function CountUp({ to, decimals = 0, prefix = "", suffix = "", duration = 2000 }: CountUpProps) {
+export function CountUp({ to, decimals = 0, prefix = "", suffix = "", duration = 2000 }: CountUpProps) {
   const ref = useRef<HTMLSpanElement>(null);
   const [value, setValue] = useState(0);
 
@@ -271,7 +271,7 @@ export default function Hero() {
             }`}
           />
         ))}
-        <div className="absolute inset-0 bg-[var(--vk-lime-soft)]/55" />
+        <div className="absolute inset-0 bg-[var(--vk-lime-soft)]/45 max-sm:bg-[var(--vk-lime-soft)]/58" />
         <div className="absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-b from-transparent to-[var(--vk-lime-soft)]" />
       </div>
       {/* Desktop: solid palette wash behind the text column only, fading out so the photo stays clear */}
@@ -281,37 +281,37 @@ export default function Hero() {
       <div className="relative mx-auto flex max-w-[1400px] flex-col px-5 py-10 sm:px-8 lg:h-full lg:px-10 lg:py-[2.5vh]">
         {/* Three columns: text · video · form */}
         <div className="grid flex-1 items-center gap-8 lg:grid-cols-[1fr_1.3fr_0.9fr] lg:gap-[clamp(1.25rem,2vw,2.25rem)]">
-          {/* Left — text (centred on mobile/tablet, with a soft light glow so it reads over the photo) */}
-          <div className="relative min-w-0 max-lg:text-center max-lg:[text-shadow:0_1px_12px_rgba(242,249,213,0.95),0_0_2px_rgba(242,249,213,0.9)]">
+          {/* Left — text (centred on mobile/tablet, without a text shadow) */}
+          <div className="relative min-w-0 max-lg:text-center max-sm:mx-auto max-sm:w-full max-sm:max-w-[400px] max-sm:rounded-[28px] max-sm:bg-[var(--vk-lime-soft)]/68 max-sm:px-4 max-sm:py-5 max-sm:backdrop-blur-[2px]">
             <Animate from="left">
-            <span className="inline-flex items-center gap-2 whitespace-nowrap rounded-full border border-[var(--vk-green)]/15 bg-white px-3.5 py-1.5 text-[10.5px] font-extrabold uppercase tracking-[0.1em] text-[var(--vk-green)] [text-shadow:none] sm:px-4 sm:text-[12.5px] sm:tracking-[0.16em]">
-              <span className="h-1.5 w-1.5 rounded-full bg-[var(--vk-pink)]" />
+            <span className="inline-flex items-center gap-2 whitespace-nowrap rounded-full border border-[var(--vk-green)]/15 bg-white px-3.5 py-1.5 text-[10.5px] font-extrabold uppercase tracking-[0.1em] text-[var(--vk-green)] max-sm:max-w-full max-sm:whitespace-normal max-sm:px-3 max-sm:text-[10px] max-sm:leading-relaxed max-sm:tracking-[0.06em] sm:px-4 sm:text-[12.5px] sm:tracking-[0.16em]">
+              <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--vk-pink)]" />
               NABH Certified Ayurvedic Hospital
             </span>
             </Animate>
 
             <Animate from="left" delay={150}>
-            <h1 className="mt-[1.6vh] font-serif text-[clamp(1.9rem,min(2.75vw,5vh),3.1rem)] font-black leading-[1.08] text-[var(--vk-green-dark)]">
+            <h1 className="mt-[1.6vh] font-serif text-[clamp(1.9rem,min(2.75vw,5vh),3.1rem)] font-black leading-[1.08] text-[var(--vk-green-dark)] max-sm:mt-5 max-sm:text-[clamp(1.75rem,7.5vw,2.25rem)] max-sm:leading-[1.2] max-sm:text-balance [&>span]:max-sm:mt-2">
               Back, Neck &amp; Joint Pain?
               <span className="block text-[var(--vk-green)]">Talk to an Ayurveda Doctor for ₹150.</span>
             </h1>
             </Animate>
 
             <Animate from="left" delay={300}>
-            <p className="mt-[1.6vh] max-w-[440px] max-lg:mx-auto text-[clamp(0.95rem,min(1.1vw,2.05vh),1.12rem)] leading-[1.65] text-black lg:text-[#4b5563]">
+            <p className="mt-[1.6vh] max-w-[440px] max-lg:mx-auto text-[clamp(0.95rem,min(1.1vw,2.05vh),1.12rem)] leading-[1.65] text-black max-sm:mt-4 max-sm:max-w-[34ch] max-sm:text-[15px] max-sm:leading-[1.7] max-sm:text-pretty lg:text-[#4b5563]">
               Get your condition assessed in a one-to-one consultation and know the right treatment plan for you — before deciding anything else.
             </p>
             </Animate>
 
             <Animate from="left" delay={450}>
-            <div className="mt-[1.8vh] overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
-              <ul className="flex w-max animate-[marquee_18s_linear_infinite] hover:[animation-play-state:paused] motion-reduce:animate-none">
+            <div className="mt-[1.8vh] overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)] max-sm:mt-5 max-sm:[mask-image:none]">
+              <ul className="flex w-max animate-[marquee_18s_linear_infinite] hover:[animation-play-state:paused] motion-reduce:animate-none max-sm:mx-auto max-sm:w-fit max-sm:animate-none max-sm:flex-col max-sm:items-start max-sm:gap-2.5">
                 {[0, 1].flatMap((copy) =>
                   ["Doctor-led assessment", "Personalised plan", "No obligation to admit"].map((point) => (
                     <li
                       key={`${copy}-${point}`}
                       aria-hidden={copy === 1}
-                      className="flex shrink-0 items-center gap-2.5 pr-8 text-[16px] font-semibold whitespace-nowrap text-[var(--vk-green-dark)]"
+                      className={`flex shrink-0 items-center gap-2.5 pr-8 text-[16px] font-semibold whitespace-nowrap text-[var(--vk-green-dark)] max-sm:pr-0 max-sm:text-[14px] ${copy === 1 ? "max-sm:hidden" : ""}`}
                     >
                       <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[var(--vk-green)] text-white">
                         <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" className="h-3 w-3">
