@@ -4,6 +4,7 @@ import Image from "next/image";
 import Animate from "./Animate";
 import { branches, concerns } from "./data";
 import { CountUp } from "./hero";
+import { useConsultationBooking } from "./use-consultation-booking";
 
 const backgroundImage = "https://res.cloudinary.com/lb2my6df/image/upload/v1791027119/generic-ban-2.png";
 const videoPoster = "https://res.cloudinary.com/lb2my6df/image/upload/v1791027123/Panchakarma-Care.avif";
@@ -27,6 +28,8 @@ function LineIcon({ name, className = "h-7 w-7" }: { name: IconName; className?:
 const fieldClass = "mt-1.5 h-[clamp(38px,5.8vh,50px)] w-full rounded-xl border border-[var(--vk-green)]/20 bg-[var(--vk-lime-soft)]/55 px-4 text-[clamp(12px,1vw,15px)] font-normal text-[var(--vk-green-dark)] outline-none transition focus:border-[var(--vk-green)] focus:bg-white focus:ring-2 focus:ring-[var(--vk-green)]/15";
 
 export default function HeroReplica() {
+  const { fields, submitting, update, handleSubmit } = useConsultationBooking();
+
   return (
     <section id="hero" className="relative isolate mt-[90px] min-h-[630px] overflow-hidden bg-[var(--vk-lime-soft)] text-[var(--vk-green-dark)] lg:h-[calc(100svh-90px)]">
       <Image src={backgroundImage} alt="" fill priority unoptimized className="-z-20 object-cover object-center opacity-30" />
@@ -41,14 +44,14 @@ export default function HeroReplica() {
 
         <div className="grid min-h-0 items-stretch gap-[clamp(12px,1.2vw,22px)] lg:grid-cols-[.94fr_1.2fr_.92fr]">
           <Animate from="right" delay={450} className="order-3 min-h-0 h-full">
-          <form className="flex h-full min-h-0 flex-col overflow-hidden rounded-[28px] bg-white shadow-[0_18px_45px_rgba(1,90,54,.17)]">
+          <form onSubmit={handleSubmit} aria-busy={submitting} className="flex h-full min-h-0 flex-col overflow-hidden rounded-[28px] bg-white shadow-[0_18px_45px_rgba(1,90,54,.17)]">
             <div className="bg-[var(--vk-green-dark)] px-[clamp(18px,2vw,30px)] py-[clamp(12px,2vh,22px)] text-white"><h2 className="font-serif text-[clamp(22px,2vw,34px)] font-bold leading-tight">Book a Consultation</h2><p className="mt-1 text-[clamp(12px,1.15vw,18px)] font-bold text-[var(--vk-lime)]">Doctor consultation — ₹150 only</p></div>
             <div className="flex min-h-0 flex-1 flex-col justify-between gap-1.5 px-[clamp(18px,2vw,30px)] py-[clamp(12px,1.7vh,20px)]">
-              <label className="text-[clamp(10px,.8vw,13px)] font-extrabold">NAME<input id="hero-name" required placeholder="Full name" className={fieldClass} /></label>
-              <label className="text-[clamp(10px,.8vw,13px)] font-extrabold">PHONE<input required inputMode="numeric" maxLength={10} placeholder="10-digit mobile number" className={fieldClass} /></label>
-              <label className="text-[clamp(10px,.8vw,13px)] font-extrabold">CONCERN<select required defaultValue="" className={fieldClass}><option value="" disabled>Select your concern</option>{concerns.map((c) => <option key={c}>{c}</option>)}</select></label>
-              <label className="text-[clamp(10px,.8vw,13px)] font-extrabold">PREFERRED BRANCH<select required defaultValue="" className={fieldClass}><option value="" disabled>Select a branch</option>{branches.map((b) => <option key={b}>{b}</option>)}</select></label>
-              <button type="submit" className="mt-1 h-[clamp(40px,6vh,54px)] rounded-full bg-[var(--vk-pink)] px-4 text-[clamp(12px,1.1vw,17px)] font-extrabold text-white shadow-[0_8px_20px_rgba(239,33,80,.28)] transition hover:bg-[var(--vk-pink-dark)]">Pay &amp; Book My Consultation →</button>
+              <label className="text-[clamp(10px,.8vw,13px)] font-extrabold">NAME<input id="hero-name" type="text" value={fields.name} onChange={update("name")} required placeholder="Full name" className={fieldClass} /></label>
+              <label className="text-[clamp(10px,.8vw,13px)] font-extrabold">PHONE<input type="tel" value={fields.phone} onChange={update("phone")} required pattern="[0-9]{10}" inputMode="numeric" maxLength={10} placeholder="10-digit mobile number" className={fieldClass} /></label>
+              <label className="text-[clamp(10px,.8vw,13px)] font-extrabold">CONCERN<select required value={fields.concern} onChange={update("concern")} className={fieldClass}><option value="" disabled>Select your concern</option>{concerns.map((c) => <option key={c}>{c}</option>)}</select></label>
+              <label className="text-[clamp(10px,.8vw,13px)] font-extrabold">PREFERRED BRANCH<select required value={fields.branch} onChange={update("branch")} className={fieldClass}><option value="" disabled>Select a branch</option>{branches.map((b) => <option key={b}>{b}</option>)}</select></label>
+              <button type="submit" disabled={submitting} className="mt-1 h-[clamp(40px,6vh,54px)] rounded-full bg-[var(--vk-pink)] px-4 text-[clamp(12px,1.1vw,17px)] font-extrabold text-white shadow-[0_8px_20px_rgba(239,33,80,.28)] transition hover:bg-[var(--vk-pink-dark)] disabled:cursor-wait disabled:opacity-70">{submitting ? "Processing..." : "Pay & Book My Consultation \u2192"}</button>
               <p className="flex items-start justify-center gap-2 text-center text-[clamp(9px,.75vw,12px)] leading-snug text-[#747b84]"><LineIcon name="lock" className="h-4 w-4 shrink-0" />Secure payment via Razorpay. Our team will call you to confirm your appointment.</p>
             </div>
           </form>
