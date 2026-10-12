@@ -4,7 +4,7 @@ import Animate from "./Animate";
 const steps = [
   {
     title: "Consult",
-    description: "Meet the doctor for a ₹150 assessment of your back, neck or joint problem.",
+    description: "Meet the doctor for a ₹99 assessment of your back, neck or joint problem.",
     image: "https://res.cloudinary.com/lb2my6df/image/upload/v1791027119/generic-ban-1.png",
     alt: "Ayurveda doctor consulting a patient",
   },

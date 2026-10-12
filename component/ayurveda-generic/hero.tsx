@@ -204,7 +204,7 @@ export default function Hero() {
             <Animate from="left" delay={150}>
             <h1 className="mt-[1.6vh] font-serif text-[clamp(1.9rem,min(2.75vw,5vh),3.1rem)] font-black leading-[1.08] text-[var(--vk-green-dark)] max-sm:mt-5 max-sm:text-[clamp(1.75rem,7.5vw,2.25rem)] max-sm:leading-[1.2] max-sm:text-balance [&>span]:max-sm:mt-2">
               Back, Neck &amp; Joint Pain?
-              <span className="block text-[var(--vk-green)]">Talk to an Ayurveda Doctor for ₹150.</span>
+              <span className="block text-[var(--vk-green)]">Talk to an Ayurveda Doctor for ₹99.</span>
             </h1>
             </Animate>
 
@@ -291,7 +291,7 @@ export default function Hero() {
               <h2 className="mt-1 font-serif text-[clamp(1.3rem,min(1.65vw,3.1vh),1.7rem)] font-black leading-tight text-white">
                 Book a Consultation
               </h2>
-              <p className="mt-1 text-[14px] text-white/65">Doctor consultation — ₹150 only</p>
+              <p className="mt-1 text-[14px] text-white/65">Doctor consultation — ₹99 only</p>
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-[min(1.1vh,11px)] px-6 py-[min(1.8vh,18px)]">

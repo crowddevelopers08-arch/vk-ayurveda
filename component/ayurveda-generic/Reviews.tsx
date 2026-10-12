@@ -35,7 +35,7 @@ const copy = {
   googleRating: "4.8 on Google",
   reviewCount: "2,400+ reviews",
   verified: "Verified",
-  bookCta: "Book ₹150 Consultation",
+  bookCta: "Book ₹99 Consultation",
 };
 
 function StarIcon({ filled, className = "" }: { filled: boolean; className?: string }) {
@@ -65,7 +65,7 @@ export default function ReviewSection() {
   };
 
   return (
-    <section className="bg-white px-[14px] pb-12 pt-5 min-[600px]:px-5 min-[600px]:pb-[72px] min-[600px]:pt-2.5">
+    <section className="bg-white px-[14px] pb-12 pt-5 min-[600px]:px-5 min-[600px]:pb-[42px] min-[600px]:pt-10.5">
       <div className="text-center">
         <Animate from="left">
           <p className="mb-1 text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--vk-green)] sm:mb-1 sm:text-[13px] sm:tracking-[0.18em]">

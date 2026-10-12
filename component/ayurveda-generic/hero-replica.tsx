@@ -45,7 +45,7 @@ export default function HeroReplica() {
         <div className="grid min-h-0 items-stretch gap-[clamp(12px,1.2vw,22px)] lg:grid-cols-[.94fr_1.2fr_.92fr]">
           <Animate from="right" delay={450} className="order-3 min-h-0 h-full">
           <form onSubmit={handleSubmit} aria-busy={submitting} className="flex h-full min-h-0 flex-col overflow-hidden rounded-[28px] bg-white shadow-[0_18px_45px_rgba(1,90,54,.17)]">
-            <div className="bg-[var(--vk-green-dark)] px-[clamp(18px,2vw,30px)] py-[clamp(12px,2vh,22px)] text-white"><h2 className="font-serif text-[clamp(22px,2vw,34px)] font-bold leading-tight">Book a Consultation</h2><p className="mt-1 text-[clamp(12px,1.15vw,18px)] font-bold text-[var(--vk-lime)]">Doctor consultation — ₹150 only</p></div>
+            <div className="bg-[var(--vk-green-dark)] px-[clamp(18px,2vw,30px)] py-[clamp(12px,2vh,22px)] text-white"><h2 className="font-serif text-[clamp(22px,2vw,34px)] font-bold leading-tight">Book a Consultation</h2><p className="mt-1 text-[clamp(12px,1.15vw,18px)] font-bold text-[var(--vk-lime)]">Doctor consultation — ₹99 only</p></div>
             <div className="flex min-h-0 flex-1 flex-col justify-between gap-1.5 px-[clamp(18px,2vw,30px)] py-[clamp(12px,1.7vh,20px)]">
               <label className="text-[clamp(10px,.8vw,13px)] font-extrabold">NAME<input id="hero-name" type="text" value={fields.name} onChange={update("name")} required placeholder="Full name" className={fieldClass} /></label>
               <label className="text-[clamp(10px,.8vw,13px)] font-extrabold">PHONE<input type="tel" value={fields.phone} onChange={update("phone")} required pattern="[0-9]{10}" inputMode="numeric" maxLength={10} placeholder="10-digit mobile number" className={fieldClass} /></label>
@@ -68,7 +68,7 @@ export default function HeroReplica() {
           <div className="flex h-full min-h-0 flex-col justify-center px-[clamp(8px,1.6vw,28px)]">
             <p className="font-serif text-[clamp(12px,1vw,17px)] tracking-[.45em]">VK AYURVEDA</p>
             <h1 className="mt-[clamp(8px,1.5vh,18px)] font-serif text-[clamp(40px,4.15vw,72px)] font-black leading-[.96] tracking-[-.03em]">Back, Neck &amp;<br /><span className="text-[var(--vk-green)]">Joint Pain?</span></h1>
-            <h2 className="mt-[clamp(12px,2vh,24px)] font-serif text-[clamp(21px,2vw,30px)] font-bold leading-[1.08]">Talk to an Ayurveda Doctor<br />for ₹150.</h2>
+            <h2 className="mt-[clamp(12px,2vh,24px)] font-serif text-[clamp(21px,2vw,30px)] font-bold leading-[1.08]">Talk to an Ayurveda Doctor<br />for ₹99.</h2>
             <p className="mt-[clamp(10px,1.7vh,20px)] text-[clamp(11px,1vw,16px)] leading-[1.55] text-[#3f474d]">Get a detailed assessment, understand your condition and receive a personalised treatment plan — all in one consultation.</p>
             <div className="mt-[clamp(12px,2vh,24px)] grid grid-cols-3 divide-x divide-[#8f978f]">
               {[["leaf", "Detailed", "Assessment"], ["bowl", "Personalised", "Treatment Plan"], ["people", "Guidance from", "Experienced Doctors"]].map(([icon, a, b]) => <div key={a} className="flex flex-col items-center px-2 text-center"><span className="flex h-[clamp(42px,4.8vw,68px)] w-[clamp(42px,4.8vw,68px)] items-center justify-center rounded-full border border-white bg-[var(--vk-lime)]/35 text-[var(--vk-green)]"><LineIcon name={icon as IconName} /></span><p className="mt-2 font-serif text-[clamp(9px,.8vw,13px)] font-bold leading-tight">{a}<br />{b}</p></div>)}
@@ -83,7 +83,7 @@ export default function HeroReplica() {
             { icon: "hospital", title: "NABH", desc: "Certified hospital" },
             { icon: "star", count: { to: 4.8, decimals: 1, suffix: " ★" }, desc: "Google rating" },
             { icon: "people", count: { to: 40000, suffix: "+" }, desc: "Patients treated" },
-            { icon: "calendar", count: { to: 150, prefix: "₹" }, desc: "Consultation" },
+            { icon: "calendar", count: { to: 99, prefix: "₹" }, desc: "Consultation" },
           ].map((item, index) => <div key={item.desc} className={`flex items-center justify-center gap-3 px-3 ${index ? "border-l border-white/20" : ""}`}><span className="flex h-[clamp(38px,4.5vw,58px)] w-[clamp(38px,4.5vw,58px)] shrink-0 items-center justify-center rounded-full border border-[var(--vk-lime)]/70 text-[var(--vk-lime)]"><LineIcon name={item.icon as IconName} /></span><span><strong className="block text-[clamp(14px,1.5vw,24px)]">{item.count ? <CountUp {...item.count} /> : item.title}</strong><small className="text-[clamp(10px,.9vw,14px)] text-white/85">{item.desc}</small></span></div>)}
         </div>
         </Animate>

@@ -19,7 +19,7 @@ const content: Record<Language, LegalContent> = {
         content: [
           "When you book a consultation, you agree to provide accurate details including your name, phone number, and relevant health information.",
           "Your booking is confirmed only after our team contacts you and allots a date and time. Appointment slots are subject to doctor availability.",
-          "The consultation fee shown on the website (currently ₹150) applies to the initial doctor consultation only. Medicines, therapies, and treatment packages are charged separately.",
+          "The consultation fee shown on the website (currently ₹99) applies to the initial doctor consultation only. Medicines, therapies, and treatment packages are charged separately.",
         ],
       },
       {
@@ -90,7 +90,7 @@ const content: Record<Language, LegalContent> = {
         content: [
           "ஆலோசனை முன்பதிவு செய்யும்போது, உங்கள் பெயர், தொலைபேசி எண் மற்றும் தொடர்புடைய உடல்நல தகவல்கள் உட்பட சரியான விவரங்களை வழங்க ஒப்புக்கொள்கிறீர்கள்.",
           "எங்கள் குழு உங்களை தொடர்பு கொண்டு தேதி மற்றும் நேரத்தை ஒதுக்கிய பிறகே உங்கள் முன்பதிவு உறுதிப்படுத்தப்படும். சந்திப்பு நேரங்கள் மருத்துவர் கிடைப்பதைப் பொறுத்தது.",
-          "இணையதளத்தில் காட்டப்படும் ஆலோசனை கட்டணம் (தற்போது ₹150) முதல் மருத்துவர் ஆலோசனைக்கு மட்டுமே. மருந்துகள், சிகிச்சைகள் மற்றும் சிகிச்சை தொகுப்புகளுக்கு தனியாக கட்டணம் வசூலிக்கப்படும்.",
+          "இணையதளத்தில் காட்டப்படும் ஆலோசனை கட்டணம் (தற்போது ₹99) முதல் மருத்துவர் ஆலோசனைக்கு மட்டுமே. மருந்துகள், சிகிச்சைகள் மற்றும் சிகிச்சை தொகுப்புகளுக்கு தனியாக கட்டணம் வசூலிக்கப்படும்.",
         ],
       },
       {

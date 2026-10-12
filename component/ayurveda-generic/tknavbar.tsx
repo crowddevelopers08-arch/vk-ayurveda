@@ -7,10 +7,10 @@ type Language = "en" | "ta";
 
 const navCopy = {
   en: {
-    cta: "Book ₹150 Consultation",
+    cta: "Book ₹99 Consultation",
   },
   ta: {
-    cta: "₹150 ஆலோசனை பதிவு",
+    cta: "₹99 ஆலோசனை பதிவு",
   },
 } satisfies Record<Language, { cta: string }>;
 

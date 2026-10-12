@@ -51,7 +51,7 @@ export default function Navbar() {
             className="cursor-pointer rounded-full bg-[var(--vk-pink)] px-4 py-2.5 text-[13px] font-extrabold text-white transition hover:-translate-y-0.5 hover:bg-[var(--vk-pink-dark)] sm:px-6 sm:py-3 sm:text-sm"
           >
             <span className="sm:hidden">Book Now</span>
-            <span className="hidden sm:inline">Book ₹150 Consultation</span>
+            <span className="hidden sm:inline">Book ₹99 Consultation</span>
           </button>
         </div>
       </div>

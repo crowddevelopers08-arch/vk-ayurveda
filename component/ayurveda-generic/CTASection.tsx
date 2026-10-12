@@ -4,7 +4,7 @@ import Animate from "./Animate";
 
 const copy = {
   titleStart: "Start with a",
-  titleHighlight: "₹150 consultation",
+  titleHighlight: "₹99 consultation",
   subtitle: "Know your condition and your options. No obligation.",
   book: "Book Consultation Now",
   phone: "+91 99966 60102",

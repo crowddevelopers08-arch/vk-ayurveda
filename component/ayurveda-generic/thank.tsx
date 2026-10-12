@@ -6,7 +6,7 @@ import Animate from "./Animate";
 const steps = [
   { title: "We call you", description: "Our team will call you to confirm your request." },
   { title: "Confirm your slot", description: "Choose a convenient time at your preferred branch." },
-  { title: "Meet the doctor", description: "One-to-one ₹150 consultation and a clear plan." },
+  { title: "Meet the doctor", description: "One-to-one ₹99 consultation and a clear plan." },
 ];
 
 export default function ThankYou({ paymentId }: { paymentId?: string }) {
