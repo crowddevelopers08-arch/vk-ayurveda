@@ -10,4 +10,4 @@ export const concerns = [
 ];
 
 // TODO: replace with the real VK Ayurveda branch names
-export const branches = ["Branch 1", "Branch 2", "Online Consultation"];
+export const branches = ["Thiruvarur", "Mayiladuthurai", "Karaikal", "Pattukkottai"];
