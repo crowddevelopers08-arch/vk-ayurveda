@@ -55,6 +55,64 @@ body {
   }
 }
 
+/* Hero background slideshow: 3 slides x 6s, each fades in, holds, fades out */
+@keyframes hero-bg-fade {
+  0% {
+    opacity: 0;
+  }
+  8%,
+  33% {
+    opacity: 1;
+  }
+  41%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes hero-bg-zoom {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.hero-bg-slide {
+  opacity: 0;
+  animation: hero-bg-fade 18s ease-in-out infinite;
+  /* negative delay so the first slide is already visible on load */
+  animation-delay: -1.5s;
+}
+
+.hero-bg-slide:nth-child(2) {
+  animation-delay: 4.5s;
+}
+
+.hero-bg-slide:nth-child(3) {
+  animation-delay: 10.5s;
+}
+
+.hero-bg-zoom {
+  animation: hero-bg-zoom 12s ease-in-out infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-bg-slide,
+  .hero-bg-zoom {
+    animation: none;
+  }
+
+  .hero-bg-slide:first-child {
+    opacity: 1;
+  }
+}
+
 @layer utilities {
   .animate-fade-slide-up {
     animation: fade-slide-up 0.7s ease forwards;

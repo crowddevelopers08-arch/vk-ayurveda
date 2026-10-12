@@ -6,10 +6,12 @@ import { branches, concerns } from "./data";
 import { CountUp } from "./hero";
 import { useConsultationBooking } from "./use-consultation-booking";
 
-const backgroundImage = "https://res.cloudinary.com/lb2my6df/image/upload/v1791027119/generic-ban-2.png";
-const videoPoster = "https://res.cloudinary.com/lb2my6df/image/upload/v1791027123/Panchakarma-Care.avif";
-
-type IconName = "hospital" | "leaf" | "bowl" | "people" | "star" | "calendar" | "lock" | "play";
+const backgroundImages = [
+  "https://res.cloudinary.com/lb2my6df/image/upload/v1791027119/generic-ban-1.png",
+  "https://res.cloudinary.com/lb2my6df/image/upload/v1791027119/generic-ban-2.png",
+  "https://res.cloudinary.com/lb2my6df/image/upload/v1791027120/generic-ban-3.png",
+];
+type IconName = "hospital" | "leaf" | "bowl" | "people" | "star" | "calendar" | "lock";
 
 function LineIcon({ name, className = "h-7 w-7" }: { name: IconName; className?: string }) {
   const paths: Record<IconName, React.ReactNode> = {
@@ -19,9 +21,7 @@ function LineIcon({ name, className = "h-7 w-7" }: { name: IconName; className?:
     people: <><circle cx="9" cy="8" r="3" /><circle cx="17" cy="9" r="2.5" /><path d="M3 20c.6-4 2.6-6 6-6s5.4 2 6 6m1-5c2.7.2 4.3 1.8 5 4.5" /></>,
     star: <path d="m12 3 2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.3-4.1 5.9-.9L12 3Z" />,
     calendar: <><rect x="4" y="5" width="16" height="15" rx="2" /><path d="M8 3v4m8-4v4M4 10h16m-10 5 1.5 1.5L15 13" /></>,
-    lock: <><rect x="6" y="10" width="12" height="10" rx="2" /><path d="M9 10V7a3 3 0 0 1 6 0v3m-3 4v2" /></>,
-    play: <path d="m9 7 8 5-8 5V7Z" />,
-  };
+    lock: <><rect x="6" y="10" width="12" height="10" rx="2" /><path d="M9 10V7a3 3 0 0 1 6 0v3m-3 4v2" /></>,  };
   return <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">{paths[name]}</svg>;
 }
 
@@ -32,8 +32,14 @@ export default function HeroReplica() {
 
   return (
     <section id="hero" className="relative isolate mt-[90px] min-h-[630px] overflow-hidden bg-[var(--vk-lime-soft)] text-[var(--vk-green-dark)] lg:h-[calc(100svh-90px)]">
-      <Image src={backgroundImage} alt="" fill priority unoptimized className="-z-20 object-cover object-center opacity-30" />
-      <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(242,249,213,.94),rgba(242,249,213,.6)_50%,rgba(242,249,213,.95))]" />
+      <div className="absolute inset-0 -z-20 opacity-30" aria-hidden="true">
+        {backgroundImages.map((src, index) => (
+          <div key={src} className="hero-bg-slide absolute inset-0 overflow-hidden">
+            <Image src={src} alt="" fill priority={index === 0} unoptimized className="hero-bg-zoom object-cover object-center" />
+          </div>
+        ))}
+      </div>
+      <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(242,249,213,.95),rgba(242,249,213,.75)_55%,rgba(242,249,213,.6))]" />
 
       <div className="mx-auto grid h-full max-w-[1680px] grid-rows-[auto_minmax(0,1fr)_auto] gap-[clamp(8px,1.1vh,13px)] px-[clamp(20px,2.2vw,38px)] py-[clamp(10px,1.3vh,16px)]">
         <Animate from="left">
@@ -42,8 +48,8 @@ export default function HeroReplica() {
         </header>
         </Animate>
 
-        <div className="grid min-h-0 items-stretch gap-[clamp(12px,1.2vw,22px)] lg:grid-cols-[.94fr_1.2fr_.92fr]">
-          <Animate from="right" delay={450} className="order-3 min-h-0 h-full">
+        <div className="grid min-h-0 items-stretch gap-[clamp(16px,3vw,56px)] lg:grid-cols-[minmax(0,1.3fr)_minmax(380px,.8fr)]">
+          <Animate from="right" delay={300} className="order-2 mx-auto min-h-0 h-full w-full max-w-[540px] lg:mr-0">
           <form onSubmit={handleSubmit} aria-busy={submitting} className="flex h-full min-h-0 flex-col overflow-hidden rounded-[28px] bg-white shadow-[0_18px_45px_rgba(1,90,54,.17)]">
             <div className="bg-[var(--vk-green-dark)] px-[clamp(18px,2vw,30px)] py-[clamp(12px,2vh,22px)] text-white"><h2 className="font-serif text-[clamp(22px,2vw,34px)] font-bold leading-tight">Book a Consultation</h2><p className="mt-1 text-[clamp(12px,1.15vw,18px)] font-bold text-[var(--vk-lime)]">Doctor consultation — ₹99 only</p></div>
             <div className="flex min-h-0 flex-1 flex-col justify-between gap-1.5 px-[clamp(18px,2vw,30px)] py-[clamp(12px,1.7vh,20px)]">
@@ -57,20 +63,13 @@ export default function HeroReplica() {
           </form>
           </Animate>
 
-          <Animate from="up" delay={300} className="order-2 min-h-[300px] h-full">
-          <div className="relative h-full min-h-[300px] overflow-hidden rounded-[26px] border-2 border-white shadow-[0_18px_45px_rgba(25,59,44,.22)]">
-            <video className="h-full w-full object-cover" src="/vk-hero.mp4" poster={videoPoster} autoPlay muted loop playsInline controls />
-            <div className="pointer-events-none absolute left-5 top-5 flex items-center gap-3 rounded-full bg-white/95 px-4 py-2 shadow-lg"><span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#074b37] text-white"><LineIcon name="play" className="h-5 w-5" /></span><span><strong className="block text-[clamp(12px,1vw,16px)]">Inside VK Ayurveda</strong><small className="block text-[clamp(9px,.75vw,12px)] text-[#273d37]">Traditional Care. Real People. Better Lives.</small></span></div>
-          </div>
-          </Animate>
-
           <Animate from="left" delay={150} className="order-1 min-h-0 h-full">
-          <div className="flex h-full min-h-0 flex-col justify-center px-[clamp(8px,1.6vw,28px)]">
+          <div className="flex h-full min-h-0 max-w-[760px] flex-col justify-center px-[clamp(4px,1.6vw,28px)] py-4 lg:py-0">
             <p className="font-serif text-[clamp(12px,1vw,17px)] tracking-[.45em]">VK AYURVEDA</p>
-            <h1 className="mt-[clamp(8px,1.5vh,18px)] font-serif text-[clamp(40px,4.15vw,72px)] font-black leading-[.96] tracking-[-.03em]">Back, Neck &amp;<br /><span className="text-[var(--vk-green)]">Joint Pain?</span></h1>
-            <h2 className="mt-[clamp(12px,2vh,24px)] font-serif text-[clamp(21px,2vw,30px)] font-bold leading-[1.08]">Talk to an Ayurveda Doctor<br />for ₹99.</h2>
-            <p className="mt-[clamp(10px,1.7vh,20px)] text-[clamp(11px,1vw,16px)] leading-[1.55] text-[#3f474d]">Get a detailed assessment, understand your condition and receive a personalised treatment plan — all in one consultation.</p>
-            <div className="mt-[clamp(12px,2vh,24px)] grid grid-cols-3 divide-x divide-[#8f978f]">
+            <h1 className="mt-[clamp(8px,1.5vh,18px)] font-serif text-[clamp(40px,5vw,86px)] font-black leading-[.96] tracking-[-.03em]">Back, Neck &amp;<br /><span className="text-[var(--vk-green)]">Joint Pain?</span></h1>
+            <h2 className="mt-[clamp(12px,2vh,24px)] font-serif text-[clamp(21px,2.3vw,36px)] font-bold leading-[1.1]">Talk to an Ayurveda Doctor for ₹99.</h2>
+            <p className="mt-[clamp(10px,1.7vh,20px)] max-w-[600px] text-[clamp(13px,1.1vw,18px)] leading-[1.6] text-[#3f474d]">Get a detailed assessment, understand your condition and receive a personalised treatment plan — all in one consultation.</p>
+            <div className="mt-[clamp(14px,2.6vh,32px)] grid max-w-[600px] grid-cols-3 divide-x divide-[#8f978f]">
               {[["leaf", "Detailed", "Assessment"], ["bowl", "Personalised", "Treatment Plan"], ["people", "Guidance from", "Experienced Doctors"]].map(([icon, a, b]) => <div key={a} className="flex flex-col items-center px-2 text-center"><span className="flex h-[clamp(42px,4.8vw,68px)] w-[clamp(42px,4.8vw,68px)] items-center justify-center rounded-full border border-white bg-[var(--vk-lime)]/35 text-[var(--vk-green)]"><LineIcon name={icon as IconName} /></span><p className="mt-2 font-serif text-[clamp(9px,.8vw,13px)] font-bold leading-tight">{a}<br />{b}</p></div>)}
             </div>
           </div>
