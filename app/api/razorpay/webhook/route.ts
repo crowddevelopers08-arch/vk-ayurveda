@@ -2,7 +2,7 @@ export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 import { NextRequest, NextResponse } from "next/server";
-import { GENERIC_LP_FORM, RazorpayPayment, hmacMatches, paiseToRupees } from "@/lib/razorpay";
+import { CAMP_LP_FORM, GENERIC_LP_FORM, RazorpayPayment, hmacMatches, paiseToRupees } from "@/lib/razorpay";
 import { istTimestamp, postToTeleCRM, telecrmPhone } from "@/lib/telecrm";
 
 /**
@@ -29,7 +29,7 @@ function crmPayload(payment: RazorpayPayment, paid: boolean) {
       { type: "SYSTEM_NOTE" as const, text: `Razorpay Payment ID: ${payment.id}` },
       { type: "SYSTEM_NOTE" as const, text: `Razorpay Order ID: ${payment.order_id}` },
       { type: "SYSTEM_NOTE" as const, text: `Method: ${payment.method || "Not specified"}` },
-      { type: "SYSTEM_NOTE" as const, text: `Form: ${GENERIC_LP_FORM}` },
+      { type: "SYSTEM_NOTE" as const, text: `Form: ${notes.form}` },
       { type: "SYSTEM_NOTE" as const, text: `Condition: ${notes.concern || "Not specified"}` },
       { type: "SYSTEM_NOTE" as const, text: `Branch: ${notes.branch || "Not specified"}` },
       { type: "SYSTEM_NOTE" as const, text: `URL: ${notes.source || "Not specified"}` },
@@ -69,8 +69,9 @@ export async function POST(req: NextRequest) {
   if (event !== "payment.captured" && event !== "payment.failed") {
     return NextResponse.json({ received: true, ignored: event });
   }
-  if (!payment?.id || payment.notes?.form !== GENERIC_LP_FORM) {
-    return NextResponse.json({ received: true, ignored: "not a generic-lp payment" });
+  const form = payment?.notes?.form;
+  if (!payment?.id || (form !== GENERIC_LP_FORM && form !== CAMP_LP_FORM)) {
+    return NextResponse.json({ received: true, ignored: "not a landing-page payment" });
   }
 
   const paid = event === "payment.captured";

@@ -3,6 +3,7 @@ import { createHmac, timingSafeEqual } from "crypto";
 // Tags every order the generic LP creates, so the webhook can ignore payments
 // from other sites that share this Razorpay account.
 export const GENERIC_LP_FORM = "vk-generic";
+export const CAMP_LP_FORM = "vk-camp";
 
 export interface RazorpayPayment {
   id: string;
@@ -26,6 +27,14 @@ export function razorpayKeys() {
 export function bookingFeeRupees() {
   const fee = Number(process.env.RAZORPAY_SESSION_AMOUNT);
   return Number.isFinite(fee) && fee > 0 ? fee : null;
+}
+
+// The camp's advertised price, separate from RAZORPAY_SESSION_AMOUNT so changing the
+// generic page's fee can't change what camp visitors are charged. Set RAZORPAY_CAMP_AMOUNT
+// (in rupees) only to override it, for example to run a low-value test payment.
+export function campFeeRupees() {
+  const fee = Number(process.env.RAZORPAY_CAMP_AMOUNT);
+  return Number.isFinite(fee) && fee > 0 ? fee : 99;
 }
 
 export function basicAuth(keyId: string, keySecret: string) {

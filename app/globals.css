@@ -103,6 +103,10 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html.scroll-smooth {
+    scroll-behavior: auto;
+  }
+
   .hero-bg-slide,
   .hero-bg-zoom {
     animation: none;
