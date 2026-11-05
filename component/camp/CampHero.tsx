@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { PHONE_HREF } from "./data";
 import styles from "./camp.module.css";
 import { useCampLang } from "./use-camp-lang";
@@ -9,6 +10,10 @@ export default function CampHero() {
   const { copy } = useCampLang();
   return (
     <section className={styles.hero} id="hero">
+      {/* Decorative temple photo. A tint over it keeps the text readable. */}
+      <div className={styles.heroBg} aria-hidden="true">
+        <Image src="/temple.jpeg" alt="" fill sizes="100vw" priority />
+      </div>
       <div className={`${styles.wrap} ${styles.heroGrid}`}>
         <div className={styles.heroHead}>
           <span className={styles.badge}>{copy.badge}</span>

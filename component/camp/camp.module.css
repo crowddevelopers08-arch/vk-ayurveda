@@ -1,7 +1,7 @@
 /*
-  Camp page styles. Fonts and brand colours come from app/layout.tsx and app/globals.css,
-  the same ones the main and /generic pages use. The tear-off token slip is this page's
-  own signature element.
+  Camp page styles. DM Sans and the brand colours come from app/layout.tsx and app/globals.css.
+  Unlike the main and /generic pages, headings here use DM Sans too, not Playfair Display.
+  The tear-off token slip is this page's own signature element.
 
   Layout rules: one 1200px container for every section, one section spacing value,
   and paired columns that share their top and bottom edges.
@@ -15,7 +15,6 @@
   --on-dark-line: rgba(255, 255, 255, 0.22);
   --error: var(--vk-pink-dark);
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-  --heading-font: var(--font-playfair), Georgia, serif;
   --focus: var(--vk-green);
   --cut: var(--vk-lime-soft);
   --section: clamp(56px, 7.5vw, 104px);
@@ -28,7 +27,6 @@
   font-size: 1.0625rem;
   line-height: 1.6;
   overflow-wrap: break-word;
-  font-variant-numeric: lining-nums; /* Playfair defaults to old-style figures, which make prices look uneven */
 }
 
 .root :focus-visible {
@@ -257,8 +255,36 @@
 
 /* ---- Hero ---- */
 .hero {
+  position: relative;
+  isolation: isolate;
   padding-block: clamp(32px, 4vw, 52px);
   background: var(--vk-lime-soft);
+}
+
+.heroBg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.heroBg img {
+  object-fit: cover;
+  object-position: 70% 75%;
+}
+
+.heroBg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(242, 249, 213, 0.88);
+}
+
+@media (min-width: 1120px) {
+  .heroBg::after {
+    background: linear-gradient(90deg, rgba(242, 249, 213, 0.95), rgba(242, 249, 213, 0.66));
+  }
 }
 
 .heroGrid {
@@ -327,15 +353,14 @@
 .h1 {
   max-width: 23em;
   margin: 0;
-  font-family: var(--heading-font);
   font-size: clamp(2rem, 1.45rem + 2.3vw, 3.375rem);
-  font-weight: 800;
+  font-weight: 600;
   line-height: 1.1;
   text-wrap: balance;
 }
 
 .root:lang(en) .h1 {
-  letter-spacing: -0.02em;
+  letter-spacing: -0.025em;
 }
 
 .root:lang(ta) .h1 {
@@ -347,7 +372,7 @@
 .sub {
   max-width: 44em;
   margin: 14px 0 0;
-  color: var(--muted);
+  color: var(--ink);
   font-size: 1.125rem;
   line-height: 1.55;
 }
@@ -633,6 +658,12 @@
   padding-block: var(--section);
 }
 
+@media (max-width: 619px) {
+  .about {
+    padding-top: 36px;
+  }
+}
+
 .aboutHead {
   display: grid;
   gap: 12px;
@@ -671,9 +702,8 @@
 
 .h2 {
   margin: 0;
-  font-family: var(--heading-font);
   font-size: clamp(1.625rem, 1.3rem + 1.4vw, 2.5rem);
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.18;
   text-wrap: balance;
 }
@@ -817,9 +847,8 @@
 .formTitle {
   margin: 0 0 24px;
   color: var(--vk-green-dark);
-  font-family: var(--heading-font);
   font-size: clamp(1.5rem, 1.3rem + 0.9vw, 2.125rem);
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.2;
   text-wrap: balance;
 }
@@ -1028,9 +1057,8 @@
 .footerBrand {
   margin-bottom: 4px;
   color: var(--on-dark);
-  font-family: var(--heading-font);
   font-size: 1.75rem;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.2;
 }
 
@@ -1227,6 +1255,10 @@
 }
 
 @media (prefers-reduced-transparency: reduce) {
+  .heroBg {
+    display: none;
+  }
+
   .header {
     background: #ffffff;
     -webkit-backdrop-filter: none;
