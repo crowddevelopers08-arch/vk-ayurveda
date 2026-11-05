@@ -6,7 +6,7 @@ import { CAMP_LP_FORM, basicAuth, campFeeRupees, razorpayKeys } from "@/lib/razo
 import { istTimestamp, postToTeleCRM, telecrmPhone } from "@/lib/telecrm";
 import { CAMP, PAIN_AREAS, type PainArea } from "@/component/camp/data";
 
-const DEFAULT_SOURCE = "https://pain.vkayurveda.com/camp";
+const DEFAULT_SOURCE = "https://pain.vkayurveda.com/camp-Mayiladuthurai";
 const CAMP_BRANCH = `${CAMP.loc.en} camp (every ${CAMP.day.en})`;
 
 interface CampLead {

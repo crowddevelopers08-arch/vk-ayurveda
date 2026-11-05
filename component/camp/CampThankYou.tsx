@@ -10,7 +10,7 @@ export default function CampThankYou({ paymentId }: { paymentId?: string }) {
   const { copy } = useCampLang();
   return (
     <>
-      <CampHeader home="/camp" showBook={false} />
+      <CampHeader home="/camp-Mayiladuthurai" showBook={false} />
       <main className={styles.thanks}>
         <div className={styles.thanksSlip}>
           <div className={styles.slip}>
@@ -45,7 +45,7 @@ export default function CampThankYou({ paymentId }: { paymentId?: string }) {
               </a>
             </div>
           </div>
-          <Link className={styles.thanksBack} href="/camp">
+          <Link className={styles.thanksBack} href="/camp-Mayiladuthurai">
             {copy.backToCamp}
           </Link>
         </div>

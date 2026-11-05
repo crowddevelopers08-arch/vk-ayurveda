@@ -23,7 +23,7 @@ function LanguageToggle() {
   );
 }
 
-// `home` is where the logo links to. The thank-you page links back to /camp and has no booking button.
+// `home` is where the logo links to. The thank-you page links back to the camp page and has no booking button.
 export default function CampHeader({ home = "#hero", showBook = true }: { home?: string; showBook?: boolean }) {
   const { copy } = useCampLang();
   return (

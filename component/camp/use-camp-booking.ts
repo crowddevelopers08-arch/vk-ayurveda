@@ -49,7 +49,7 @@ export function useCampBooking() {
       });
       const data = await res.json();
       if (!res.ok || !data.verified) throw new Error("Verification failed");
-      router.push(`/camp/thank-you?payment_id=${encodeURIComponent(data.paymentId)}`);
+      router.push(`/camp-Mayiladuthurai/thank-you?payment_id=${encodeURIComponent(data.paymentId)}`);
     } catch (err) {
       console.error("Camp payment verification failed:", err);
       stop("verify_failed");
